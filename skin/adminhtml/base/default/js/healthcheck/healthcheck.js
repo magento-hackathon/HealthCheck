@@ -1,7 +1,11 @@
 var Hackathon_HealthCheck = {
 
+    init : function(url) {
+        this.url = url;
+    },
+
     showData : function(checkIdentifier, domId) {
-        jQuery.getJSON("check/ajax", {checkIdentifier: checkIdentifier} , function(data) {
+        jQuery.getJSON(this.url, {checkIdentifier: checkIdentifier} , function(data) {
             /*
              *   TYPE TABLE
              */

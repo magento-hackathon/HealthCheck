@@ -4,6 +4,7 @@
 
 <script>
     jQuery(document).ready(function() {
+        Hackathon_HealthCheck.init('<?php echo Mage::getUrl('healthcheck/check/ajax') ?>');
         Hackathon_HealthCheck.showData('producttypes', '#pieProducts');
     });
 </script>
