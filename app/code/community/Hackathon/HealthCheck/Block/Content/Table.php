@@ -35,7 +35,11 @@ class Hackathon_HealthCheck_Block_Content_Table extends Hackathon_HealthCheck_Bl
      */
     public function _getBlockContent()
     {
-        return array_merge(array($this->getHeaderRow()), $this->getRows());
+        $result = array();
+        foreach ($this->getRows() as $row) {
+            $result[] = array_combine($this->getHeaderRow(), $row);
+        }
+        return $result;
     }
 
     /**
