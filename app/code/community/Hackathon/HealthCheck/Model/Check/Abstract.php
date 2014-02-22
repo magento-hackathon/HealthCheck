@@ -3,8 +3,8 @@
 abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
 {
     public function initCheck() {
-        if ($this->getAvailability())
-        {
+
+        if ($this->getAvailability()) {
             return true;
         } else {
             return false;
@@ -16,17 +16,17 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
      */
     public function getAvailability() {
 
-        /*
-         * @TODO: Check Magento Version against versions from config
-         */
+        $result = true;
 
         foreach ($this->versions as $version) {
-            if (version_compare(Mage::getVersion(), $version)) {
-                return true;
+            if (version_compare(Mage::getVersion(), $version, '=')) {
+                $result = true;
             } else {
-                return false;
+                $result = false;
             }
         }
+
+        return $result;
     }
 
     /**

@@ -15,7 +15,7 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
     public function run() {
         if ($this->initCheck()) {
             /**
-             * Do the actual check here
+             * @TODO Do the actual check here
              */
             return array('result' => 'true');
         } else {
