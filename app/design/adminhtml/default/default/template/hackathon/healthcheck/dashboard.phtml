@@ -1,5 +1,5 @@
 <?php
 
-foreach ($this->getAllChecks() as $check) {
-    echo $this->getChildHtml('healthcheck_check_'.$check);
+foreach ($this->getAllChecks() as $check => $type) {
+    echo $this->getChildHtml('healthcheck_check_'.$type);
 }
