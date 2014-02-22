@@ -14,8 +14,6 @@
     background: #f3f3f3;
 }
 .healthcheck-box {
-    width: auto;
-    float: left;
     box-sizing: border-box;
     padding: 20px;
     margin: 20px;
