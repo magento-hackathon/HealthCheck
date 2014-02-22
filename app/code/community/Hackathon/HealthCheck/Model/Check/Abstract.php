@@ -1,6 +1,6 @@
 <?php
 
-abstract class Hackathon_Healthcheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
+abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
 {
 
     /**

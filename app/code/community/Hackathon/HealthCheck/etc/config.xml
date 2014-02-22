@@ -28,28 +28,27 @@
                     <version>1.6</version>
                     <version>1.7.0.2</version>
                 </versions>
-            </sitemap>
-            <!--
-                static|ondemand
-            -->
-            <type>static</type>
 
-            <!--
-             plaintext
-             piechart
-             barchart
-             donutchart
-             table
-            -->
-            <display-type>plaintext</display-type>
+                <!--
+                    static|ondemand
+                -->
+                <type>static</type>
+
+                <!--
+                 plaintext
+                 piechart
+                 barchart
+                 donutchart
+                 table
+                -->
+                <display-type>plaintext</display-type>
+            </sitemap>
         </healthcheck>
+
         <!-- PLUGIN CONFIG END -->
 
     </global>
-
-
     <admin>
-
         <routers>
             <hackathon_healthcheck>
                 <use>admin</use>
@@ -58,14 +57,6 @@
                     <frontName>healthcheck</frontName>
                 </args>
             </hackathon_healthcheck>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <Hackathon_HealthCheck before="Mage_Adminhtml">Hackathon_HealthCheck</Hackathon_HealthCheck>
-                    </modules>
-                </args>
-            </adminhtml>
         </routers>
-
     </admin>
 </config>

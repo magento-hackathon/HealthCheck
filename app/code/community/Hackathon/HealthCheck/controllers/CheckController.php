@@ -11,6 +11,6 @@ class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Ac
          */
         $check = $factory::getCheck('sitemap');
 
-        print_r($check->getData());
+        print_r($check);
     }
 }

@@ -6,7 +6,13 @@
  * Time: 11:47
  */
 
-class Hackathon_Healthcheck_Model_Sitemap extends Hackathon_Healthcheck_Model_Abstract
+class Hackathon_HealthCheck_Model_Sitemap extends Hackathon_HealthCheck_Model_Check_Abstract
 {
+    public function getType() {
+        return 'static';
+    }
 
+    public function run() {
+        return true;
+    }
 }
