@@ -26,11 +26,9 @@ abstract class Hackathon_HealthCheck_Block_Content_Abstract extends Mage_Core_Bl
      */
     public function getBlockContent()
     {
-        $blockContent = $this->_getBlockContent();
-
         $result = array(
             'type'      => $this->getCheck()->getContentType(),
-            'content'   => $blockContent
+            'content'   => $this->_getBlockContent()
         );
 
         return $this->_encode($result);

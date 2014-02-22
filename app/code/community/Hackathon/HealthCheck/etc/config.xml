@@ -48,6 +48,24 @@
                 -->
                 <content_type>table</content_type>
             </sitemap>
+
+            <producttypes>
+                <model>hackathon_healthcheck/check_producttypes</model>
+
+                <!--
+                    static|ondemand
+                -->
+                <type>static</type>
+
+                <!--
+                 plaintext
+                 piechart
+                 barchart
+                 donutchart
+                 table
+                -->
+                <content_type>piechart</content_type>
+            </producttypes>
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->
