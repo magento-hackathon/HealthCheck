@@ -11,6 +11,9 @@ class Hackathon_HealthCheck_Helper_Data extends Mage_Core_Helper_Abstract {
 
     const CHECK_NODE = 'global/healthcheck/%s';
 
+    const TYPE_STATIC = 'static';
+    const TYPE_ONDEMAND = 'ondemand';
+
     /**
      * Extract versions from csv versions string with wildcards
      *

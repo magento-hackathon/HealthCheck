@@ -4,7 +4,7 @@ var Hackathon_HealthCheck = {
         this.url = url;
     },
 
-    showData : function(checkIdentifier, domId) {
+    showData : function(checkIdentifier) {
         jQuery.getJSON(this.url, {checkIdentifier: checkIdentifier} , function(data) {
             /*
              *   TYPE TABLE
@@ -12,7 +12,7 @@ var Hackathon_HealthCheck = {
             if(data['type'] == "table") {
                 jQuery.jsontotable(data['content'], {
                     header: false,
-                    id: domId,
+                    id: '#' + checkIdentifier,
                     className: "health-table"
                 });
             }
@@ -20,7 +20,7 @@ var Hackathon_HealthCheck = {
              *   TYPE PLAINTEXT
              */
             else if(data['type'] == "plaintext") {
-                jQuery(domId).append(data['content']);
+                jQuery('#' + checkIdentifier).append(data['content']);
             }
             /*
              *   TYPE PIECHART
@@ -32,7 +32,7 @@ var Hackathon_HealthCheck = {
                 });
 
                 jQuery(function () {
-                    jQuery(domId).dxPieChart({
+                    jQuery('#' + checkIdentifier).dxPieChart({
                         dataSource: pieChartSource ,
                         series: {
                             argumentField: 'type',

@@ -16,6 +16,7 @@ class Hackathon_HealthCheck_Model_Factory extends Mage_Core_Model_Abstract
         if ($checkConfig) {
             $model = Mage::getModel($checkConfig->model);
             $model->setData($checkConfig->asArray());
+            $model->setCheckId($checkIdentifier);
             return $model;
         } else {
             Mage::throwException('Check Identifier not found or not present!');

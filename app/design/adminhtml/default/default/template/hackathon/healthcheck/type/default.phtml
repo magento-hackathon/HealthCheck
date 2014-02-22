@@ -1,16 +1,17 @@
-<div id="pieProducts" class="piechart healthcheck-box">
+<?php
 
-</div>
+$checkId = $this->getCheck()->getCheckId();
 
-
-<div id="sitemap" class="table healthcheck-box">
+?>
+<div id="<?php echo $checkId; ?>" class="<?php echo $this->getCheck()->getContentType() ?> healthcheck-box">
     <h2><?php echo $this->getCheck()->getTitle(); ?></h2>
+
     <?php  if($this->getCheck()->getType() == Hackathon_HealthCheck_Helper_Data::TYPE_ONDEMAND): ?>
         <a href="#" onclick="alert('ondemand')">Get it!</a>
     <?php else: ?>
         <script>
             jQuery(document).ready(function() {
-                Hackathon_HealthCheck.showData('producttypes', '#pieProducts');
+                Hackathon_HealthCheck.showData('<?php echo $checkId; ?>');
             });
         </script>
 
