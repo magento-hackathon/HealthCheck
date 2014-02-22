@@ -18,18 +18,6 @@
                     template = "hackathon/healthcheck/dashboard.phtml"/>
         </reference>
 
-<!--        <reference name = "healthcheck_dashboard">
-            <block type = "hackathon_healthcheck/adminhtml_type_piechart" name = "healthcheck_check_piechart"
-                    template = "hackathon/healthcheck/type/piechart.phtml"/>
-        </reference>
-        <reference name = "healthcheck_dashboard">
-            <block type = "hackathon_healthcheck/adminhtml_type_table" name = "healthcheck_check_table"
-                    template = "hackathon/healthcheck/type/table.phtml"/>
-        </reference>
-        <reference name = "healthcheck_dashboard">
-            <block type = "hackathon_healthcheck/adminhtml_type_plaintext" name = "healthcheck_check_plaintext"
-                    template = "hackathon/healthcheck/type/plaintext.phtml"/>
-        </reference>
--->    </hackathon_healthcheck_check_index>
+    </hackathon_healthcheck_check_index>
 
 </layout>
