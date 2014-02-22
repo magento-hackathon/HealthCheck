@@ -2,9 +2,14 @@ app/etc/modules/Hackathon_Healthcheck.xml app/etc/modules/Hackathon_Healthcheck.
 app/code/community/Hackathon/HealthCheck/Model/Factory.php app/code/community/Hackathon/HealthCheck/Model/Factory.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php
+app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php
 app/code/community/Hackathon/HealthCheck/Helper/Data.php app/code/community/Hackathon/HealthCheck/Helper/Data.php
 app/code/community/Hackathon/HealthCheck/controllers/CheckController.php app/code/community/Hackathon/HealthCheck/controllers/CheckController.php
+app/code/community/Hackathon/HealthCheck/Block/Content/Barchart.php app/code/community/Hackathon/HealthCheck/Block/Content/Barchart.php
+app/code/community/Hackathon/HealthCheck/Block/Content/Donutchart.php app/code/community/Hackathon/HealthCheck/Block/Content/Donutchart.php
 app/code/community/Hackathon/HealthCheck/Block/Content/Abstract.php app/code/community/Hackathon/HealthCheck/Block/Content/Abstract.php
+app/code/community/Hackathon/HealthCheck/Block/Content/Chart.php app/code/community/Hackathon/HealthCheck/Block/Content/Chart.php
+app/code/community/Hackathon/HealthCheck/Block/Content/Piechart.php app/code/community/Hackathon/HealthCheck/Block/Content/Piechart.php
 app/code/community/Hackathon/HealthCheck/Block/Content/Plaintext.php app/code/community/Hackathon/HealthCheck/Block/Content/Plaintext.php
 app/code/community/Hackathon/HealthCheck/Block/Content/Table.php app/code/community/Hackathon/HealthCheck/Block/Content/Table.php
 app/code/community/Hackathon/HealthCheck/etc/config.xml app/code/community/Hackathon/HealthCheck/etc/config.xml
