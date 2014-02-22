@@ -1,7 +1,7 @@
 var Hackathon_HealthCheck = {
 
     showData : function(checkIdentifier, domId) {
-        jQuery.getJSON("http://mage.local/magento/index.php/healthcheck/check/ajax", {checkIdentifier: checkIdentifier} , function(data) {
+        jQuery.getJSON("check/ajax", {checkIdentifier: checkIdentifier} , function(data) {
             /*
              *   TYPE TABLE
              */
@@ -41,8 +41,8 @@ var Hackathon_HealthCheck = {
                             }
                         },
                         legend: {
-                            horizontalAlignment: 'center',
-                            verticalAlignment: 'bottom',
+                            horizontalAlignment: 'right',
+                            //verticalAlignment: 'bottom',
                             font: {
                                 size: 15
                             }
