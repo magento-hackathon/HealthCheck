@@ -26,6 +26,7 @@ app/design/adminhtml/default/default/template/hackathon/healthcheck/type/table.p
 app/etc/modules/Hackathon_Healthcheck.xml app/etc/modules/Hackathon_Healthcheck.xml
 skin/adminhtml/base/default/js/healthcheck/dx.chartjs.js skin/adminhtml/base/default/js/healthcheck/dx.chartjs.js
 skin/adminhtml/base/default/js/healthcheck/globalize.min.js skin/adminhtml/base/default/js/healthcheck/globalize.min.js
+skin/adminhtml/base/default/js/healthcheck/healthcheck.js skin/adminhtml/base/default/js/healthcheck/healthcheck.js
 skin/adminhtml/base/default/js/healthcheck/jquery.js skin/adminhtml/base/default/js/healthcheck/jquery.js
 skin/adminhtml/base/default/js/healthcheck/jquery.jsontotable.js skin/adminhtml/base/default/js/healthcheck/jquery.jsontotable.js
 skin/adminhtml/base/default/js/healthcheck/jquery.noconflict.js skin/adminhtml/base/default/js/healthcheck/jquery.noconflict.js
