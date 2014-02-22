@@ -8,14 +8,12 @@ class Hackathon_HealthCheck_Model_Check_Producttypes extends Hackathon_HealthChe
         /** @var Hackathon_HealthCheck_Block_Content_Piechart $block */
         $block = $this->getBlock();
 
-        $block
-            ->addValue('simple', 199)
-            ->addValue('grouped', 9)
-            ->addValue('bundle', 39)
-            ->addValue('configurable', 13)
-            ->addValue('downloadable', 99)
-            ->addValue('virtual', 1)
-        ;
+        $productCollection = Mage::getModel('catalog/product')->getCollection();
+        $productCollection->getSelect()->group('type_id')->columns('type_id, COUNT(*) AS count');
+
+        foreach ($productCollection as $_product) {
+            $block->addValue($_product->getTypeId(), $_product->getCount());
+        }
 
         return $this;
     }
