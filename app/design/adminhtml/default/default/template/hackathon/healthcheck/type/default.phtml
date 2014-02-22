@@ -9,7 +9,13 @@ $checkId = $this->getCheck()->getCheckId();
     <div id="<?php echo $checkId; ?>"></div>
 
     <?php  if($this->getCheck()->getType() == Hackathon_HealthCheck_Helper_Data::TYPE_ONDEMAND): ?>
-        <a href="#" class="execute-button" onclick="Hackathon_HealthCheck.showData('<?php echo $checkId; ?>');"><?php echo $this->__('Execute Check') ?></a>
+        <button onclick="Hackathon_HealthCheck.showData('<?php echo $checkId; ?>');" class="button execute-button">
+            <span>
+                <span>
+                    <?php echo $this->__('Execute Check') ?>
+                </span>
+            </span>
+        </button>
     <?php else: ?>
         <script>
             jQuery(document).ready(function() {
