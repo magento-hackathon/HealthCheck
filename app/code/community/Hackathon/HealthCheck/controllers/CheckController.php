@@ -1,6 +1,6 @@
 <?php
 
-class Hackathon_HealthCheck_Adminhtml_CheckController extends Mage_Adminhtml_Controller_Action
+class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Action
 {
     public function __construct() {
         die('blergh');
