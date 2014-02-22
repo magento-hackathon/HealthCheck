@@ -1,10 +1,10 @@
 <?php
 
 
-class Hackathon_HealthCheck_Block_Content_Chart extends Hackathon_HealthCheck_Block_Content_Abstract
+class Hackathon_HealthCheck_Model_Content_Renderer_Chart extends Hackathon_HealthCheck_Model_Content_Renderer_Abstract
 {
 
-    const CONTENT_TYPE_PLAINTEXT = 'chart';
+    const CONTENT_TYPE_CHART = 'chart';
 
 
     /**
@@ -12,7 +12,7 @@ class Hackathon_HealthCheck_Block_Content_Chart extends Hackathon_HealthCheck_Bl
      *
      * @return mixed
      */
-    public function _getBlockContent()
+    public function _getContent()
     {
         return $this->getValues();
     }

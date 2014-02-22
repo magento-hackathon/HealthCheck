@@ -19,10 +19,10 @@ class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Ac
             /** @var Hackathon_HealthCheck_Model_Abstract $check */
             $check = $factory->getCheck($checkIdentifier);
 
-            /** @var Hackathon_HealthCheck_Block_Content_Plaintext $block */
-            $block = $factory->getContentBlock($check);
+            /** @var Hackathon_HealthCheck_Model_Content_Renderer_Abstract $renderer */
+            $renderer = $factory->getContentRenderer($check);
             $check
-                ->setBlock($block)
+                ->setContentRenderer($renderer)
                 ->run()
             ;
         }

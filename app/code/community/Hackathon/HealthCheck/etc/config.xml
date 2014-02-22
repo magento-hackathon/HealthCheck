@@ -26,33 +26,22 @@
         <healthcheck>
             <sitemap>
                 <model>hackathon_healthcheck/check_sitemap</model>
-
                 <versions>
-                    <version>1.4</version>
-                    <version>1.5</version>
-                    <version>1.6</version>
-                    <version>1.7.0.2</version>
+                    *
+                    1.6.2
+                    1.3*
+                    1.7.0*
                 </versions>
-
-                <!--
-                    static|ondemand
-                -->
                 <type>static</type>
-
-                <!--
-                 plaintext
-                 piechart
-                 barchart
-                 donutchart
-                 table
-                -->
                 <content_type>table</content_type>
+                <title>Sitemap</title>
             </sitemap>
 
             <producttypes>
                 <model>hackathon_healthcheck/check_producttypes</model>
                 <type>static</type>
                 <content_type>piechart</content_type>
+                <title>Product Types</title>
             </producttypes>
         </healthcheck>
 
@@ -79,4 +68,18 @@
             </hackathon_healthcheck>
         </routers>
     </admin>
+
+    <adminhtml>
+
+        <translate>
+            <modules>
+                <Hackathon_HealthCheck>
+                    <files>
+                        <default>Hackathon_HealthCheck.csv</default>
+                    </files>
+                </Hackathon_HealthCheck>
+            </modules>
+        </translate>
+
+    </adminhtml>
 </config>

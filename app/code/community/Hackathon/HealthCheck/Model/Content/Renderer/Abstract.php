@@ -5,7 +5,7 @@
  * @method string setContentType($type)
  */
 
-abstract class Hackathon_HealthCheck_Block_Content_Abstract extends Mage_Core_Block_Abstract
+abstract class Hackathon_HealthCheck_Model_Content_Renderer_Abstract extends Mage_Core_Model_Abstract
 {
 
     /**
@@ -24,11 +24,11 @@ abstract class Hackathon_HealthCheck_Block_Content_Abstract extends Mage_Core_Bl
      *
      * @return mixed
      */
-    public function getBlockContent()
+    public function getContent()
     {
         $result = array(
             'type'      => $this->getCheck()->getContentType(),
-            'content'   => $this->_getBlockContent()
+            'content'   => $this->_getContent()
         );
 
         return $this->_encode($result);
@@ -39,14 +39,14 @@ abstract class Hackathon_HealthCheck_Block_Content_Abstract extends Mage_Core_Bl
      */
     public function renderResult()
     {
-        echo $this->getBlockContent();
+        echo $this->getContent();
     }
 
     /**
-     * Retrieve the data for the block output.
+     * Retrieve the data for the json output.
      *
      * @return string
      */
-    abstract protected function _getBlockContent();
+    abstract protected function _getContent();
 
 }

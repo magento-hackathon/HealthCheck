@@ -16,19 +16,7 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
      */
     public function getAvailability() {
 
-        $result = true;
-
-        if ($this->versions) {
-            foreach ($this->versions as $version) {
-                if (version_compare(Mage::getVersion(), $version, '=')) {
-                    $result = true;
-                } else {
-                    $result = false;
-                }
-            }
-        }
-
-        return $result;
+        return $this->_checkVersions();
     }
 
     /**
@@ -41,7 +29,7 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
         if ($this->initCheck()) {
             $this->_run();
         }
-        $this->getBlock()->renderResult();
+        $this->getContentRenderer()->renderResult();
 
         return $this;
     }
@@ -52,4 +40,35 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
      * @return mixed
      */
     abstract function _run();
+
+    /**
+     * @return bool
+     */
+    protected function _checkVersions()
+    {
+        if (!count($this->getVersions())) {
+            return true;
+        }
+
+        $mageVersion = Mage::getVersion();
+
+        /** @var Hackathon_HealthCheck_Helper_Data $helper */
+        $helper = Mage::helper('hackathon_healthcheck');
+
+        // retrieve supported versions from config.xml
+        $versions = $helper->extractVersions($this->getVersions());
+
+        // iterate on versions to find a fitting one
+        foreach ($versions as $_version) {
+            $quotedVersion = preg_quote($_version);
+
+            // build regular expression with wildcard to check magento version
+            $pregExpr = '#\A' . str_replace('\*', '.*', $quotedVersion) . '\z#ims';
+
+            if (preg_match($pregExpr, $mageVersion)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -10,7 +10,8 @@ class Hackathon_HealthCheck_Model_Factory extends Mage_Core_Model_Abstract
      * @return mixed
      */
     public function getCheck($checkIdentifier) {
-        $checkConfig = Mage::getConfig()->getNode('global/healthcheck/'.$checkIdentifier);
+        $nodeString = sprintf(Hackathon_HealthCheck_Helper_Data::CHECK_NODE, $checkIdentifier);
+        $checkConfig = Mage::getConfig()->getNode($nodeString);
 
         if ($checkConfig) {
             $model = Mage::getModel($checkConfig->model);
@@ -27,14 +28,14 @@ class Hackathon_HealthCheck_Model_Factory extends Mage_Core_Model_Abstract
      * @param $check
      * @return mixed
      */
-    public function getContentBlock($check)
+    public function getContentRenderer($check)
     {
-        $block = Mage::getSingleton('core/layout')->createBlock('hackathon_healthcheck/content_' . $check->getContentType());
-        if ($block) {
-            $block->setCheck($check);
-            return $block;
+        $renderer = Mage::getModel('hackathon_healthcheck/content_renderer_' . $check->getContentType());
+        if ($renderer) {
+            $renderer->setCheck($check);
+            return $renderer;
         } else {
-            Mage::throwException('Block Type not found: ' . $check->getContentType());
+            Mage::throwException('Renderer not found: ' . $check->getContentType());
         }
     }
 }

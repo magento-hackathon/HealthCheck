@@ -22,7 +22,7 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 $helper->__('Path'),
                 $helper->__('Status')
             );
-            $this->getBlock()->setHeaderRow($header);
+            $this->getContentRenderer()->setHeaderRow($header);
 
             foreach ($sitemaps as $sitemap) {
                 $filename = $sitemap->getSitemapFilename();
@@ -46,12 +46,12 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 }
                 $row = array ($id, $filename, $totalPath, $status);
 
-                $this->getBlock()->addRow($row);
+                $this->getContentRenderer()->addRow($row);
             }
         } else {
             $factory = Mage::getModel('hackathon_healthcheck/factory');
             $this->setContentType(Hackathon_HealthCheck_Block_Content_Plaintext::CONTENT_TYPE_PLAINTEXT);
-            $block = $factory->getContentBlock($this);
+            $block = $factory->getContentRenderer($this);
             $this->setBlock($block);
             $block->setContent($helper->__('No Sitemap'));
         }

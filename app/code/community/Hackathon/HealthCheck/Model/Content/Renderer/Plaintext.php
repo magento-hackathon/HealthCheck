@@ -7,7 +7,7 @@
  * @copyright 2013 Shopwerft GmbH (http://www.shopwerft.com)
  */
 
-class Hackathon_HealthCheck_Block_Content_Plaintext extends Hackathon_HealthCheck_Block_Content_Abstract
+class Hackathon_HealthCheck_Model_Content_Renderer_Plaintext extends Hackathon_HealthCheck_Model_Content_Renderer_Abstract
 {
 
     const CONTENT_TYPE_PLAINTEXT = 'plaintext';
@@ -17,7 +17,7 @@ class Hackathon_HealthCheck_Block_Content_Plaintext extends Hackathon_HealthChec
      *
      * @return string
      */
-    public function _getBlockContent()
+    public function _getContent()
     {
         if ($this->getContent()) {
             return $this->getContent();

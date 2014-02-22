@@ -2,12 +2,14 @@
 
 /**
  *
- * @method Hackathon_HealthCheck_Block_Content_Table setHeaderRow() set the header row for table
+ * @method Hackathon_HealthCheck_Model_Content_Renderer_Table setHeaderRow() set the header row for table
  *
  */
 
-class Hackathon_HealthCheck_Block_Content_Table extends Hackathon_HealthCheck_Block_Content_Abstract
+class Hackathon_HealthCheck_Model_Content_Renderer_Table extends Hackathon_HealthCheck_Model_Content_Renderer_Abstract
 {
+
+    const CONTENT_TYPE_TABLE = 'table';
 
     /**
      *
@@ -33,7 +35,7 @@ class Hackathon_HealthCheck_Block_Content_Table extends Hackathon_HealthCheck_Bl
      *
      * @return mixed
      */
-    public function _getBlockContent()
+    public function _getContent()
     {
         $result = array();
         foreach ($this->getRows() as $row) {
