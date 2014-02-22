@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout>
+
+    <hackathon_healthcheck_check_index>
+        <reference name = "content">
+            <block type = "hackathon_healthcheck/adminhtml_dashboard" name = "healthcheck_dashboard"
+                    template = "hackathon/healthcheck/dashboard.phtml"/>
+        </reference>
+
+        <reference name = "healthcheck_dashboard">
+            <block type = "hackathon_healthcheck/type_piechart" name = "product_piechart"
+                    template = "hackathon/healthcheck/type/piechart.phtml"
+                    output = ""/>
+        </reference>
+        <reference name = "healthcheck_dashboard">
+            <block type = "hackathon_healthcheck/type_table" name = "product_piechart"
+                    template = "hackathon/healthcheck/type/table.phtml" output = ""/>
+        </reference>
+        <reference name = "healthcheck_dashboard">
+            <block type = "hackathon_healthcheck/type_plaintext" name = "product_piechart"
+                    template = "hackathon/healthcheck/type/plaintext.phtml" output = ""/>
+        </reference>
+    </hackathon_healthcheck_check_index>
+
+</layout>

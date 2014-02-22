@@ -53,6 +53,15 @@
         <!-- PLUGIN CONFIG END -->
 
     </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <Hackathon_HealthCheck>
+                    <file>hackathon/healthcheck/layout.xml</file>
+                </Hackathon_HealthCheck>
+            </updates>
+        </layout>
+    </adminhtml>
     <admin>
         <routers>
             <hackathon_healthcheck>

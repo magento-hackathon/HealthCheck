@@ -5,6 +5,8 @@ class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Ac
 
     public function indexAction()
     {
+        $this->loadLayout();
+        $this->renderLayout();
         echo "We have to build some blocks and layout here.";
     }
 
