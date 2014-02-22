@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Hackathon_Healthcheck>
+            <version>0.1.0</version>
+        </Hackathon_Healthcheck>
+    </modules>
+    <global>
+        <models>
+            <hackathon_healthcheck>
+                <class>Hackathon_Healthcheck_Model</class>
+                <resourceModel>hackathon_healthcheck_resource</resourceModel>
+            </hackathon_healthcheck>
+            <hackathon_healthcheck_resource>
+                <class>Hackathon_Healthcheck_Model_Resource</class>
+            </hackathon_healthcheck_resource>
+        </models>
+        <helpers>
+            <hackathon_healthcheck>
+                <class>Hackathon_Healthcheck_Helper</class>
+            </hackathon_healthcheck>
+        </helpers>
+
+        <healthcheck>
+            <sitemap>
+                <model>hackathon_healthcheck/check_sitemap</model>
+
+                <versions>
+                    <version>1.4</version>
+                    <version>1.5</version>
+                    <version>1.6</version>
+                    <version>1.7.0.2</version>
+                </versions>
+            </sitemap>
+            <!--
+                static|ondemand
+            -->
+            <type>static</type>
+
+            <!--
+             plaintext
+             piechart
+             barchart
+             donutchart
+             table
+            -->
+            <display-type>plaintext</display-type>
+        </healthcheck>
+
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Hackathon_Healthcheck before="Mage_Adminhtml">Hackathon_Healthcheck_Adminhtml</Hackathon_Healthcheck>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
