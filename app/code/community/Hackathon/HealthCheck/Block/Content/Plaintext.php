@@ -11,6 +11,7 @@ class Hackathon_HealthCheck_Block_Content_Plaintext extends Hackathon_HealthChec
 {
 
     const CONTENT_TYPE_PLAINTEXT = 'plaintext';
+
     /**
      * Retrieve the data for the block output.
      *

@@ -18,11 +18,13 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
 
         $result = true;
 
-        foreach ($this->versions as $version) {
-            if (version_compare(Mage::getVersion(), $version, '=')) {
-                $result = true;
-            } else {
-                $result = false;
+        if ($this->versions) {
+            foreach ($this->versions as $version) {
+                if (version_compare(Mage::getVersion(), $version, '=')) {
+                    $result = true;
+                } else {
+                    $result = false;
+                }
             }
         }
 
