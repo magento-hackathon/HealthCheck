@@ -10,6 +10,7 @@
             <action method="addItem"><type>skin_js</type><script>js/healthcheck/dx.chartjs.js</script></action>
             <action method="addItem"><type>skin_js</type><script>js/healthcheck/jquery.jsontotable.js</script></action>
             <action method="addItem"><type>skin_js</type><script>js/healthcheck/healthcheck.js</script></action>
+            <action method="addItem"><type>skin_css</type><script>css/healthcheck/healthcheck.css</script></action>
         </reference>
 
         <reference name = "content">
