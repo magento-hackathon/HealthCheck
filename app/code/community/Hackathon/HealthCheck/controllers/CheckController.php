@@ -22,7 +22,7 @@ class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Ac
             $result = $check->run();
         }
 
-        return json_encode($result);
+        echo json_encode($result);
 
     }
 }
