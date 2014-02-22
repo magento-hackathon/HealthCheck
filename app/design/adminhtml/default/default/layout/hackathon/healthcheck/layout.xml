@@ -2,6 +2,15 @@
 <layout>
 
     <hackathon_healthcheck_check_index>
+
+        <reference name = "head">
+            <action method="addItem"><type>skin_js</type><script>js/healthcheck/jquery.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/healthcheck/jquery.noconflict.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/healthcheck/globalize.min.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/healthcheck/dx.chartjs.js</script></action>
+            <action method="addItem"><type>skin_js</type><script>js/healthcheck/jquery.jsontotable.js</script></action>
+        </reference>
+
         <reference name = "content">
             <block type = "hackathon_healthcheck/adminhtml_dashboard" name = "healthcheck_dashboard"
                     template = "hackathon/healthcheck/dashboard.phtml"/>
