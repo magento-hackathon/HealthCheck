@@ -6,5 +6,6 @@
 <?php
 
 foreach ($this->getAllChecks() as $check) {
-    echo $this->getChildHtml('healthcheck_check_'.$check->getContentType());
+    echo $this->getCheckBlock($check)->toHtml();
+    //echo $this->getChildHtml('healthcheck_check_'.$check->getContentType());
 }
