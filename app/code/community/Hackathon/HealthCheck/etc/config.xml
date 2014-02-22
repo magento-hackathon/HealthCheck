@@ -46,7 +46,10 @@
         <!-- PLUGIN CONFIG END -->
 
     </global>
+
+
     <admin>
+
         <routers>
             <hackathon_healthcheck>
                 <use>admin</use>
@@ -55,6 +58,14 @@
                     <frontName>healthcheck</frontName>
                 </args>
             </hackathon_healthcheck>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Hackathon_HealthCheck before="Mage_Adminhtml">Hackathon_HealthCheck</Hackathon_HealthCheck>
+                    </modules>
+                </args>
+            </adminhtml>
         </routers>
+
     </admin>
 </config>
