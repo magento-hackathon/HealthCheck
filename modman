@@ -1,4 +1,5 @@
 app/design/adminhtml/default/default/layout/hackathon/healthcheck/layout.xml app/design/adminhtml/default/default/layout/hackathon/healthcheck/layout.xml
+app/design/adminhtml/default/default/template/hackathon/healthcheck/type/default.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/default.phtml
 app/design/adminhtml/default/default/template/hackathon/healthcheck/type/plaintext.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/plaintext.phtml
 app/design/adminhtml/default/default/template/hackathon/healthcheck/type/table.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/table.phtml
 app/design/adminhtml/default/default/template/hackathon/healthcheck/type/piechart.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/piechart.phtml
