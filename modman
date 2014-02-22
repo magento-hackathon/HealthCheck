@@ -1,8 +1,5 @@
 app/design/adminhtml/default/default/layout/hackathon/healthcheck/layout.xml app/design/adminhtml/default/default/layout/hackathon/healthcheck/layout.xml
 app/design/adminhtml/default/default/template/hackathon/healthcheck/type/default.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/default.phtml
-app/design/adminhtml/default/default/template/hackathon/healthcheck/type/plaintext.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/plaintext.phtml
-app/design/adminhtml/default/default/template/hackathon/healthcheck/type/table.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/table.phtml
-app/design/adminhtml/default/default/template/hackathon/healthcheck/type/piechart.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/type/piechart.phtml
 app/design/adminhtml/default/default/template/hackathon/healthcheck/dashboard.phtml app/design/adminhtml/default/default/template/hackathon/healthcheck/dashboard.phtml
 app/locale/en_US/Hackathon_HealthCheck.csv app/locale/en_US/Hackathon_HealthCheck.csv
 app/locale/de_DE/Hackathon_HealthCheck.csv app/locale/de_DE/Hackathon_HealthCheck.csv
