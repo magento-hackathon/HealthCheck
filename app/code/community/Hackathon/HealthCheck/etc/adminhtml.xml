@@ -4,14 +4,14 @@
             <resources>
                 <admin>
                     <children>
-                        <hackathon>
+                        <hackathon_healthcheck>
                             <title>Hackathon</title>
                             <children>
-                                <hackathon_healthcheck translate="title" module="hackathon_healthcheck">
+                                <hackathon_healthcheck_module translate="title" module="hackathon_healthcheck">
                                     <title>HealthCheck</title>
-                                </hackathon_healthcheck>
+                                </hackathon_healthcheck_module>
                             </children>
-                        </hackathon>
+                        </hackathon_healthcheck>
                     </children>
                 </admin>
             </resources>

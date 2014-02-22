@@ -9,11 +9,7 @@
         <models>
             <hackathon_healthcheck>
                 <class>Hackathon_HealthCheck_Model</class>
-                <resourceModel>hackathon_healthcheck_resource</resourceModel>
             </hackathon_healthcheck>
-            <hackathon_healthcheck_resource>
-                <class>Hackathon_HealthCheck_Model_Resource</class>
-            </hackathon_healthcheck_resource>
         </models>
         <helpers>
             <hackathon_healthcheck>
@@ -52,13 +48,13 @@
     </global>
     <admin>
         <routers>
-            <adminhtml>
+            <hackathon_healthcheck>
+                <use>admin</use>
                 <args>
-                    <modules>
-                        <Hackathon_HealthCheck before="Mage_Adminhtml">Hackathon_HealthCheck_Adminhtml</Hackathon_HealthCheck>
-                    </modules>
+                    <module>Hackathon_HealthCheck</module>
+                    <frontName>healthcheck</frontName>
                 </args>
-            </adminhtml>
+            </hackathon_healthcheck>
         </routers>
     </admin>
 </config>
