@@ -21,6 +21,7 @@
             </hackathon_healthcheck>
         </helpers>
 
+        <!-- PLUGIN CONFIG -->
         <healthcheck>
             <sitemap>
                 <model>hackathon_healthcheck/check_sitemap</model>
@@ -46,6 +47,7 @@
             -->
             <display-type>plaintext</display-type>
         </healthcheck>
+        <!-- PLUGIN CONFIG END -->
 
     </global>
     <admin>

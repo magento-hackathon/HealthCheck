@@ -5,4 +5,4 @@ app/code/community/Hackathon/HealthCheck/Helper/Data.php app/code/community/Hack
 app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php
 app/code/community/Hackathon/HealthCheck/Model/Factory.php app/code/community/Hackathon/HealthCheck/Model/Factory.php
-app/etc/modules/Hackathon_Healthcheck.xml app/etc/modules/Hackathon_Healthcheck.xml
+app/etc/modules/Hackathon_HealthCheck.xml app/etc/modules/Hackathon_HealthCheck.xml
