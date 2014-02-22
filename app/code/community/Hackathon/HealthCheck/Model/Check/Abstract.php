@@ -30,12 +30,24 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
     }
 
     /**
-     * @return mixed Tell the framework, wether this check should be executed every time or just ondemand
+     * Execute the check
+     *
+     * @return $this
      */
-    abstract function getType();
+    public function run()
+    {
+        if ($this->initCheck()) {
+            $this->_run();
+        }
+        $this->getBlock()->renderResult();
+
+        return $this;
+    }
 
     /**
-     * @return mixed Actually perform the check and return the result
+     * Actually perform the check and return the result
+     *
+     * @return mixed
      */
-    abstract function run();
+    abstract function _run();
 }

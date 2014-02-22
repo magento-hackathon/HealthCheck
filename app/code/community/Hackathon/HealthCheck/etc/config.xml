@@ -11,6 +11,11 @@
                 <class>Hackathon_HealthCheck_Model</class>
             </hackathon_healthcheck>
         </models>
+        <blocks>
+            <hackathon_healthcheck>
+                <class>Hackathon_HealthCheck_Block</class>
+            </hackathon_healthcheck>
+        </blocks>
         <helpers>
             <hackathon_healthcheck>
                 <class>Hackathon_HealthCheck_Helper</class>
@@ -41,7 +46,7 @@
                  donutchart
                  table
                 -->
-                <display-type>plaintext</display-type>
+                <content_type>table</content_type>
             </sitemap>
         </healthcheck>
 

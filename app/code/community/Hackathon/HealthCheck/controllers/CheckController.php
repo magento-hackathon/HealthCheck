@@ -10,19 +10,20 @@ class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Ac
 
     public function ajaxAction()
     {
-        $data = Mage::app()->getRequest()->getPost('checkIdentifier');
-
-        /** @var $data Debug-Stub */
-        $data = 'sitemap';
+        $checkIdentifier = $this->getRequest()->getParam('checkIdentifier');
 
         $factory = Mage::getModel('hackathon_healthcheck/factory');
 
-        if ($data) {
-            $check = $factory::getCheck($data);
-            $result = $check->run();
+        if ($checkIdentifier) {
+            /** @var Hackathon_HealthCheck_Model_Abstract $check */
+            $check = $factory->getCheck($checkIdentifier);
+
+            /** @var Hackathon_HealthCheck_Block_Content_Plaintext $block */
+            $block = $factory->getContentBlock($check);
+            $check
+                ->setBlock($block)
+                ->run()
+            ;
         }
-
-        echo json_encode($result);
-
     }
 }
