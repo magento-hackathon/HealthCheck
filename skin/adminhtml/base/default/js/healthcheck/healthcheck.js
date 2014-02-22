@@ -1,11 +1,12 @@
 var Hackathon_HealthCheck = {
+
     showData : function(checkIdentifier, domId) {
-        $.getJSON("http://mage.local/magento/index.php/healthcheck/check/ajax", {checkIdentifier: checkIdentifier} , function(data) {
+        jQuery.getJSON("http://mage.local/magento/index.php/healthcheck/check/ajax", {checkIdentifier: checkIdentifier} , function(data) {
             /*
              *   TYPE TABLE
              */
             if(data['type'] == "table") {
-                $.jsontotable(data['content'], {
+                jQuery.jsontotable(data['content'], {
                     header: false,
                     id: domId,
                     className: "health-table"
@@ -15,19 +16,19 @@ var Hackathon_HealthCheck = {
              *   TYPE PLAINTEXT
              */
             else if(data['type'] == "plaintext") {
-                $(domId).append(data['content']);
+                jQuery(domId).append(data['content']);
             }
             /*
              *   TYPE PIECHART
              */
             else if(data['type'] == "piechart") {
                 var pieChartSource = [];
-                $.each(data['content'], function(key, value) {
+                jQuery.each(data['content'], function(key, value) {
                     pieChartSource.push({ type: key, value: parseFloat(value)});
                 });
 
-                $(function () {
-                    $(domId).dxPieChart({
+                jQuery(function () {
+                    jQuery(domId).dxPieChart({
                         dataSource: pieChartSource ,
                         series: {
                             argumentField: 'type',
