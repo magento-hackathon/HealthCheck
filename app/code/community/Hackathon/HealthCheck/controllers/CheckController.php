@@ -5,12 +5,24 @@ class Hackathon_HealthCheck_CheckController extends Mage_Adminhtml_Controller_Ac
 
     public function indexAction()
     {
-        $factory = Mage::getModel('hackathon_healthcheck/factory');
-        /**
-         * Hardcoded for fun
-         */
-        $check = $factory::getCheck('sitemap');
+        echo "We have to build some blocks and layout here.";
+    }
 
-        print_r($check);
+    public function ajaxAction()
+    {
+        $data = Mage::app()->getRequest()->getPost('checkIdentifier');
+
+        /** @var $data Debug-Stub */
+        $data = 'sitemap';
+
+        $factory = Mage::getModel('hackathon_healthcheck/factory');
+
+        if ($data) {
+            $check = $factory::getCheck($data);
+            $result = $check->run();
+        }
+
+        return json_encode($result);
+
     }
 }

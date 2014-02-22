@@ -2,16 +2,31 @@
 
 abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
 {
+    public function initCheck() {
+        if ($this->getAvailability())
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     /**
      * @return mixed Tell the framework, wether this check is compatible with the current Magento version
      */
-    public function getAvailability($identifier) {
+    public function getAvailability() {
 
         /*
-         * If magento version >= 1.7.0.0
+         * @TODO: Check Magento Version against versions from config
          */
-        return true;
+
+        foreach ($this->versions as $version) {
+            if (version_compare(Mage::getVersion(), $version)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     /**
