@@ -82,4 +82,6 @@ For each plugin the supported Magento versions can be configured
 
 ## Howto: Developing an own Test Plugin
 
-???
+To create an own check plugin you simply have to extend the abstract class *Hackathon_HealthCheck_Model_Check_Abstract* and implement the only abstract method *run()* with your check logic. Afterwards register your plugin at the HealthCheck by adding the described XML-Code to the config.xml of your module. Done!
+
+Now your check plugin should be visible in Magento backend and executed directly (static mode) or on click (ondemand mode). The results will be saved directyl by the HealthCheck framework.
