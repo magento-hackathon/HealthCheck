@@ -1,0 +1,20 @@
+<config>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <hackathon_healthcheck>
+                            <title>Hackathon</title>
+                            <children>
+                                <example translate="title" module="hackathon_healthcheck">
+                                    <title>HealthCheck</title>
+                                </example>
+                            </children>
+                        </hackathon_healthcheck>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
