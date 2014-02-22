@@ -9,8 +9,9 @@
 class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Model_Check_Abstract
 {
     public function getType() {
-        return 'static';
+        return $this->display_type;
     }
+
 
     public function run() {
         if ($this->initCheck()) {
