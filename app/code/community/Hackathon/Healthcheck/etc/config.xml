@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Hackathon_Healthcheck>
+        <Hackathon_HealthCheck>
             <version>0.1.0</version>
-        </Hackathon_Healthcheck>
+        </Hackathon_HealthCheck>
     </modules>
     <global>
         <models>
             <hackathon_healthcheck>
-                <class>Hackathon_Healthcheck_Model</class>
+                <class>Hackathon_HealthCheck_Model</class>
                 <resourceModel>hackathon_healthcheck_resource</resourceModel>
             </hackathon_healthcheck>
             <hackathon_healthcheck_resource>
-                <class>Hackathon_Healthcheck_Model_Resource</class>
+                <class>Hackathon_HealthCheck_Model_Resource</class>
             </hackathon_healthcheck_resource>
         </models>
         <helpers>
             <hackathon_healthcheck>
-                <class>Hackathon_Healthcheck_Helper</class>
+                <class>Hackathon_HealthCheck_Helper</class>
             </hackathon_healthcheck>
         </helpers>
 
@@ -53,7 +53,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <Hackathon_Healthcheck before="Mage_Adminhtml">Hackathon_Healthcheck_Adminhtml</Hackathon_Healthcheck>
+                        <Hackathon_HealthCheck before="Mage_Adminhtml">Hackathon_HealthCheck_Adminhtml</Hackathon_HealthCheck>
                     </modules>
                 </args>
             </adminhtml>

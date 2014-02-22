@@ -1,6 +1,6 @@
 <?php
 
-class Hackathon_Healthcheck_Model_Factory
+class Hackathon_HealthCheck_Model_Factory
 {
     static function getCheck($checkIdentifier) {
         $checkConfig = Mage::getConfig()->getNode('healthcheck/'.$checkIdentifier);
