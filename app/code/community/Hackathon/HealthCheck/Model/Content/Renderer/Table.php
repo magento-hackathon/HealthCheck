@@ -56,11 +56,14 @@ class Hackathon_HealthCheck_Model_Content_Renderer_Table extends Hackathon_Healt
     public function addRow($row, $rowConfig = array())
     {
         $rows = $this->getRows();
+
+        // collect data for new row and combine with config
+        $rowData = array('values' => $row);
         if (count($rowConfig)) {
-            $row = array('values'   => $row,
-                         'config'   => $rowConfig);
+            $rowData['config'] = $rowConfig;
         }
-        $rows[] = $row;
+
+        $rows[] = $rowData;
         $this->setRows($rows);
 
         return $this;
