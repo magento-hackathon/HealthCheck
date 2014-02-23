@@ -43,6 +43,13 @@
                 <content_type>piechart</content_type>
                 <title>Product Types</title>
             </producttypes>
+
+            <hidden_activations>
+                <model>hackathon_healthcheck/check_hiddenactivations</model>
+                <type>ondemand</type>
+                <content_type>table</content_type>
+                <title>Hidden active-Flags</title>
+            </hidden_activations>
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->
