@@ -23,7 +23,19 @@
         </helpers>
 
         <!-- PLUGIN CONFIG -->
+
         <healthcheck>
+
+            <shop_status>
+                <model>hackathon_healthcheck/check_shopStatus</model>
+                <type>static</type>
+                <versions>
+                    *
+                </versions>
+                <content_type>table</content_type>
+                <title>Shop-Status</title>
+            </shop_status>
+
             <sitemap>
                 <model>hackathon_healthcheck/check_sitemap</model>
                 <versions>
@@ -38,7 +50,7 @@
             </sitemap>
 
             <producttypes>
-                <active>false</active>
+                <active>true</active>
                 <model>hackathon_healthcheck/check_producttypes</model>
                 <type>ondemand</type>
                 <content_type>piechart</content_type>
@@ -46,7 +58,7 @@
             </producttypes>
 
             <logfilesize>
-                <active>false</active>
+                <active>true</active>
                 <model>hackathon_healthcheck/check_logfilesize</model>
                 <type>ondemand</type>
                 <content_type>barchart</content_type>

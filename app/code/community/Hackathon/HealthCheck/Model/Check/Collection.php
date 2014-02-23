@@ -14,6 +14,10 @@ class Hackathon_HealthCheck_Model_Check_Collection extends Varien_Data_Collectio
             $this->_addItem($check);
         }
 
+        
+
+        $this->setOrder('sort_order');
+
         return $this;
     }
 
