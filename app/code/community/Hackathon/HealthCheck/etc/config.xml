@@ -60,14 +60,14 @@
                 <content_type>table</content_type>
                 <title>Shop Configuration</title>
                 <values>
-                    <flat_table_products>
+                    <flat_table_product>
+                        <path>catalog/frontend/flat_catalog_product</path>
+                        <recommendation>1</recommendation>
+                    </flat_table_product>
+                    <flat_table_category>
                         <path>catalog/frontend/flat_catalog_category</path>
                         <recommendation>1</recommendation>
-                    </flat_table_products>
-                    <flat_table_categories>
-                        <path>catalog/frontend/flat_catalog_category</path>
-                        <recommendation>1</recommendation>
-                    </flat_table_categories>
+                    </flat_table_category>
                 </values>
             </shop_configuration>
         </healthcheck>
