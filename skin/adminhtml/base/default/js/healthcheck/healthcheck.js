@@ -6,7 +6,6 @@ var Hackathon_HealthCheck = {
 
     showData : function(checkIdentifier) {
         jQuery.getJSON(this.url, {checkIdentifier: checkIdentifier} , function(data) {
-
             /*
              *   TYPE TABLE
              */
@@ -86,10 +85,10 @@ var Hackathon_HealthCheck = {
             else if(data['type'] == "donutchart") {
                 var donutChartSource = [];
                 jQuery.each(data['content'], function(key, value) {
-                    donutChartSource.push({ name: key, value: parseFloat(value)})
+                    donutChartSource.push({ name: key, val: parseFloat(value)})
                 });
 
-                $('#' + checkIdentifier).dxPieChart({
+                jQuery('#' + checkIdentifier).dxPieChart({
                     dataSource: donutChartSource,
                     tooltip: {
                         enabled: true,
@@ -105,10 +104,10 @@ var Hackathon_HealthCheck = {
                     },
                     series: [{
                         type: "doughnut",
-                        argumentField: "region",
+                        argumentField: "name",
                         label: {
                             visible: true,
-                            format: "millions",
+                            //format: "millions",
                             connector: {
                                 visible: true
                             }
