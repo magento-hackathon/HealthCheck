@@ -26,12 +26,15 @@
 
         <healthcheck>
 
-            <hidden_activations>
-                <model>hackathon_healthcheck/check_hiddenactivations</model>
+            <htaccess>
+                <model>hackathon_healthcheck/check_htaccess</model>
                 <type>static</type>
-                <content_type>table</content_type>
-                <title>Hidden active-Flags</title>
-            </hidden_activations>
+                <versions>
+                    *
+                </versions>
+                <content_type>plaintext</content_type>
+                <title>.htaccess</title>
+            </htaccess>
 
             <sitemap>
                 <model>hackathon_healthcheck/check_sitemap</model>
