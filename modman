@@ -9,6 +9,7 @@ app/code/community/Hackathon/HealthCheck/etc/config.xml app/code/community/Hacka
 app/code/community/Hackathon/HealthCheck/Helper/Data.php app/code/community/Hackathon/HealthCheck/Helper/Data.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Collection.php app/code/community/Hackathon/HealthCheck/Model/Check/Collection.php
+app/code/community/Hackathon/HealthCheck/Model/Check/Hiddenactivations.php app/code/community/Hackathon/HealthCheck/Model/Check/Hiddenactivations.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php
 app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Abstract.php

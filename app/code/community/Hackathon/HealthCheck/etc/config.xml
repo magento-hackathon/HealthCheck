@@ -23,7 +23,16 @@
         </helpers>
 
         <!-- PLUGIN CONFIG -->
+
         <healthcheck>
+
+            <hidden_activations>
+                <model>hackathon_healthcheck/check_hiddenactivations</model>
+                <type>static</type>
+                <content_type>table</content_type>
+                <title>Hidden active-Flags</title>
+            </hidden_activations>
+
             <sitemap>
                 <model>hackathon_healthcheck/check_sitemap</model>
                 <versions>
@@ -44,12 +53,6 @@
                 <title>Product Types</title>
             </producttypes>
 
-            <hidden_activations>
-                <model>hackathon_healthcheck/check_hiddenactivations</model>
-                <type>ondemand</type>
-                <content_type>table</content_type>
-                <title>Hidden active-Flags</title>
-            </hidden_activations>
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->
