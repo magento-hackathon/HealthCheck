@@ -16,7 +16,7 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
             if($handle = opendir($path))
             {
                 while (($file = readdir($handle)) !== false)
-                    if ($file != "." && $file != "..")
+                    if ($file != "." && $file != ".." && strpos($file, '.log'))
                     {
                         $filesize = filesize($path . $file) / 1024;
                         $renderer->addValue($file, number_format($filesize, 2));
