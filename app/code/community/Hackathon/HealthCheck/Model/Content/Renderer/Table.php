@@ -40,7 +40,9 @@ class Hackathon_HealthCheck_Model_Content_Renderer_Table extends Hackathon_Healt
         $result = array();
         foreach ($this->getRows() as $row) {
             $rowData = array_combine($this->getHeaderRow(), $row['values']);
-            $rowData = array_merge($rowData, $row['config']);
+            if (isset($row['config'])) {
+                $rowData = array_merge($rowData, $row['config']);
+            }
             $result[] = $rowData;
         }
         return $result;
