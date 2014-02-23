@@ -11,7 +11,7 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
 
         $path = Mage::getBaseDir() . '/var/log/';
 
-        if(is_dir($path))
+        if(is_dir($path) && file_exists($path))
         {
             if($handle = opendir($path))
             {
@@ -32,5 +32,6 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
             $this->setBlock($block);
             $block->setContent($helper->__('No log directory'));
         }
+        return $this;
     }
 }
