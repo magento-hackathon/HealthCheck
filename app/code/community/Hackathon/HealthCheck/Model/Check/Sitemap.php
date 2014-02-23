@@ -11,7 +11,7 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
 
     public function _run() {
    	    $sitemaps = Mage::getModel('sitemap/sitemap')->getCollection();
-
+        Mage::log($sitemaps);
         $helper = Mage::helper('hackathon_healthcheck');
 
         if (count($sitemaps)) {
@@ -28,15 +28,17 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 $filename = $sitemap->getSitemapFilename();
                 $id = $sitemap->getSitemapId();
                 $path = $sitemap->getSitemapPath();
+                $sitemapTime = strtotime($sitemap->getSitemapTime());
 
                 $totalPath = Mage::getBaseDir() . $path . $filename;
 
                 if (file_exists($totalPath)){
-                    $last_mod = filemtime($totalPath);
 
-                    $time24 = mktime(0,0,86400,0,0,0);
+                    $date = Mage::getModel('core/date')->timestamp(time());
+                    $time24 = date('Y-m-d H:i:s', $date);
+                    $time24 = strtotime($time24) - 86400;
 
-                    if (time() >= $last_mod + $time24) {
+                    if ( $sitemapTime - $time24 < 0) {
                         $status = $helper->__('OK, but not change within last 24h');
                         $warn = array('_cssClasses' => Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_WARNING);
                     } else {
