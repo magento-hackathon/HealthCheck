@@ -27,20 +27,27 @@ class Hackathon_HealthCheck_Model_Check_ShopConfiguration extends Hackathon_Heal
             $path = (string)$_config->path;
             $configValue =  Mage::getStoreConfig($path);
 
-            if (!is_null($configValue)) {
-                // get a more readable parameter name
-                $paramName = (string) $_config->path;
-                $beautyfulParamName = str_replace(
-                    array('/', '_'),
-                    array(' > ', ' '),
-                    $paramName
-                );
-
-                $recommendation = (string) $_config->recommendation;
-                $renderer->addRow(
-                    array($beautyfulParamName, $paramName, $configValue, $recommendation)
-                );
+            if (is_null($configValue)) {
+                $configValue = '---';
             }
+            // get a more readable parameter name
+            $paramName = (string) $_config->path;
+            $beautyfulParamName = str_replace(
+                array('/', '_'),
+                array(' > ', ' '),
+                $paramName
+            );
+
+            $recommendation = (string) $_config->recommendation;
+            if ($configValue == $recommendation) {
+                $rowConfig = array('_cssClasses'   => 'health-ok');
+            } else {
+                $rowConfig = array('_cssClasses'   => 'health-warning');
+            }
+            $renderer->addRow(
+                array($beautyfulParamName, $paramName, $configValue, $recommendation),
+                $rowConfig
+            );
         }
         return $this;
     }
