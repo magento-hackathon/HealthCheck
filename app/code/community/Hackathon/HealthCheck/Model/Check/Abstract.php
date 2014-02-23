@@ -6,6 +6,12 @@
 
 abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
 {
+
+    const WARN_TYPE_OK = 'health-ok';
+    const WARN_TYPE_WARNING = 'health-warning';
+    const WARN_TYPE_ERROR = 'health-error';
+
+
     public function initCheck() {
 
         if ($this->isAvailable()) {
