@@ -37,7 +37,7 @@
                 <title>Sitemap</title>
             </sitemap>
 
-            <producttypes>>
+            <producttypes>
                 <model>hackathon_healthcheck/check_producttypes</model>
                 <type>ondemand</type>
                 <content_type>piechart</content_type>
@@ -50,6 +50,13 @@
                 <content_type>barchart</content_type>
                 <title>Logfile Size</title>
             </logfilesize>
+
+            <mediasize>
+                <model>hackathon_healthcheck/check_mediasize</model>
+                <type>static</type>
+                <content_type>table</content_type>
+                <title>Media Dir Size</title>
+            </mediasize>
 
         </healthcheck>
 
