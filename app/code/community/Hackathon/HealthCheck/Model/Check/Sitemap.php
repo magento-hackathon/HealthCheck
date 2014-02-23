@@ -38,15 +38,18 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
 
                     if (time() >= $last_mod + $time24) {
                         $status = $helper->__('OK, but not change within last 24h');
+                        $warn = array('_cssClasses' => Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_WARNING);
                     } else {
                         $status = $helper->__('OK');
+                        $warn = array('_cssClasses' => Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_OK);
                     }
                 } else {
                     $status = $helper->__('Sitemap file not found');
+                    $warn = array('_cssClasses' => Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_ERROR);
                 }
                 $row = array ($id, $filename, $totalPath, $status);
 
-                $this->getContentRenderer()->addRow($row);
+                $this->getContentRenderer()->addRow($row, $warn);
             }
         } else {
             $factory = Mage::getSingleton('hackathon_healthcheck/factory');
