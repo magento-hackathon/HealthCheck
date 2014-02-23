@@ -22,8 +22,8 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 .health-warning {
-    background: #fff08d;
+    background: #FFFCB3;
 }
 .health-ok {
-    background: #9dff7f;
+    background: #CEFFBE;
 }
