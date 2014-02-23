@@ -27,3 +27,6 @@
 .health-ok {
     background: #CEFFBE;
 }
+.health-error {
+    background: #FC6666;
+}
