@@ -46,7 +46,7 @@
 
             <logfilesize>
                 <model>hackathon_healthcheck/check_logfilesize</model>
-                <type>static</type>
+                <type>ondemand</type>
                 <content_type>barchart</content_type>
                 <title>Logfile Size</title>
             </logfilesize>
