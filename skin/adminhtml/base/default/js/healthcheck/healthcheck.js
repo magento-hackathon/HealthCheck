@@ -72,9 +72,9 @@ var Hackathon_HealthCheck = {
                     series: {
                         argumentField: "name",
                         valueField: "value",
-                        name: "Size in MB",
+                        name: "Size in KB",
                         type: "bar",
-                        color: '#B83F5C'
+                        color: '#16a085'
                     },
                     tooltip: { enabled: true }
                 });
