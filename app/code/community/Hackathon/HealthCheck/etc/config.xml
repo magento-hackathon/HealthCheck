@@ -48,16 +48,16 @@
                 <type>static</type>
                 <content_type>table</content_type>
                 <title>Sitemap</title>
-                <sort_order>10</sort_order>
+                <sort_order>3</sort_order>
             </sitemap>
 
             <producttypes>
                 <active>true</active>
                 <model>hackathon_healthcheck/check_producttypes</model>
                 <type>ondemand</type>
-                <content_type>piechart</content_type>
+                <content_type>donut</content_type>
                 <title>Product Types</title>
-                <sort_order>3</sort_order>
+                <sort_order>4</sort_order>
             </producttypes>
 
             <logfilesize>
