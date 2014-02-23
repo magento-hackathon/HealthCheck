@@ -47,7 +47,7 @@
             <logfilesize>
                 <model>hackathon_healthcheck/check_logfilesize</model>
                 <type>static</type>
-                <content_type>piechart</content_type>
+                <content_type>barchart</content_type>
                 <title>Logfile Size</title>
             </logfilesize>
 

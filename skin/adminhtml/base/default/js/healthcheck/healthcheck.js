@@ -60,8 +60,24 @@ var Hackathon_HealthCheck = {
             /*
              *   TYPE DONUT
              */
-            else if(data['type'] == "donutchart") {
+            else if(data['type'] == "barchart") {
+                var barChartSource = [];
+                jQuery.each(data['content'], function(key, value) {
+                    barChartSource.push({ name: key, value: parseFloat(value)})
+                });
 
+                $('#' + checkIdentifier).dxChart({
+                    rotated: true,
+                    dataSource: barChartSource,
+                    series: {
+                        /*argumentField: "day",
+                        valueField: "value",
+                        name: "Size in MB",
+                        type: "bar",
+                        color: '#B83F5C'*/
+                    },
+                    tooltip: { enabled: true }
+                });
             }
         })
     }
