@@ -10,4 +10,8 @@
 "Status","Status"
 "Execute Check","Prüfung ausführen"
 "No information available","Keine Informationen verfügbar"
+"Configuration Parameter","Konfigurationsparameter"
+"Configuration Path","Konfigurationspfad"
+"Configuration Value","Konfigurationswert"
+"Configuration Recommendation","Konfigurationsempfehlung"
 "Logfile Size", "Logfile Größe"

@@ -1,10 +1,14 @@
 <?php
 
+/**
+ * Hackathon_HealthCheck_Model_Content_Renderer_Abstract getContentRenderer()
+ */
+
 abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
 {
     public function initCheck() {
 
-        if ($this->getAvailability()) {
+        if ($this->isAvailable()) {
             return true;
         } else {
             return false;
@@ -12,11 +16,13 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
     }
 
     /**
-     * @return mixed Tell the framework, wether this check is compatible with the current Magento version
+     * Check if check plugin is available (compatible, active etc.)
+     *
+     * @return bool
      */
-    public function getAvailability() {
+    public function isAvailable() {
 
-        return $this->_checkVersions();
+        return $this->_isActive() && $this->_checkVersions();
     }
 
     /**
@@ -40,6 +46,15 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
      * @return mixed
      */
     abstract function _run();
+
+    /**
+     * Check if check plugin is activated in config.xml
+     */
+    protected function _isActive()
+    {
+        $active = $this->getActive();
+        return (is_null($active) || $active !== "false");
+    }
 
     /**
      * @return bool

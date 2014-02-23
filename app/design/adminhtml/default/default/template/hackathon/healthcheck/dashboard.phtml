@@ -6,5 +6,8 @@
 <?php
 
 foreach ($this->getAllChecks() as $check) {
-    echo $this->getCheckBlock($check)->toHtml();
+    $checkBlock = $this->getCheckBlock($check);
+    if ($checkBlock) {
+        echo $checkBlock->toHtml();
+    }
 }
