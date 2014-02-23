@@ -32,7 +32,7 @@
                 <versions>
                     *
                 </versions>
-                <content_type>plaintext</content_type>
+                <content_type>table</content_type>
                 <title>.htaccess</title>
             </htaccess>
 
