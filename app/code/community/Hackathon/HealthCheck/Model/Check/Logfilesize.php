@@ -7,14 +7,19 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
 
         /** @var Hackathon_Healthcheck_Model_Content_Renderer_Abstract $renderer */
         $renderer = $this->getContentRenderer();
+        $path = Mage::getBaseDir() . '/var/log/';
 
-        $productCollection = Mage::getModel('catalog/product')->getCollection();
-        $productCollection->getSelect()->group('type_id')->columns('type_id, COUNT(*) AS count');
-
-        foreach ($productCollection as $_product) {
-            $renderer->addValue($_product->getTypeId(), $_product->getCount());
+        if(is_dir($path)) {
+            if($handle = opendir($path)) {
+                while (($file = readdir($handle)) !== false)
+                    if ($file != "." && $file != "..") {
+                        $renderer->addValue($file, 10);
+                    }
+                    closedir($handle);
+            }
         }
 
-        return $this;
+        //$renderer->addValue('test', '2');
+
     }
 }

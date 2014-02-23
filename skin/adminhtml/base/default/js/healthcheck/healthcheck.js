@@ -66,15 +66,15 @@ var Hackathon_HealthCheck = {
                     barChartSource.push({ name: key, value: parseFloat(value)})
                 });
 
-                $('#' + checkIdentifier).dxChart({
+                jQuery('#' + checkIdentifier).dxChart({
                     rotated: true,
                     dataSource: barChartSource,
                     series: {
-                        /*argumentField: "day",
+                        argumentField: "name",
                         valueField: "value",
                         name: "Size in MB",
                         type: "bar",
-                        color: '#B83F5C'*/
+                        color: '#B83F5C'
                     },
                     tooltip: { enabled: true }
                 });
