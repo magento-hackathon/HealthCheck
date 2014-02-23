@@ -2,6 +2,7 @@ LIST.md LIST.md
 README.md README.md
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Dashboard.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Dashboard.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Barchart.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Barchart.php
+app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Donutchart.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Donutchart.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Piechart.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Piechart.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Plaintext.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Plaintext.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Table.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Table.php

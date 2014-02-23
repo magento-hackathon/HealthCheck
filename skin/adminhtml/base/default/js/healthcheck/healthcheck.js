@@ -58,7 +58,7 @@ var Hackathon_HealthCheck = {
                 });
             }
             /*
-             *   TYPE DONUT
+             *   TYPE BARCHART
              */
             else if(data['type'] == "barchart") {
                 var barChartSource = [];
@@ -77,6 +77,42 @@ var Hackathon_HealthCheck = {
                         color: '#16a085'
                     },
                     tooltip: { enabled: true }
+                });
+            }
+            /*
+             *   TYPE DONUT
+             */
+            else if(data['type'] == "donutchart") {
+                var donutChartSource = [];
+                jQuery.each(data['content'], function(key, value) {
+                    donutChartSource.push({ name: key, val: parseFloat(value)})
+                });
+
+                jQuery('#' + checkIdentifier).dxPieChart({
+                    dataSource: donutChartSource,
+                    tooltip: {
+                        enabled: true,
+                        percentPrecision: 2,
+                        customizeText: function() {
+                            return this.valueText + " - " + this.percentText;
+                        }
+                    },
+                    legend: {
+                        horizontalAlignment: "right",
+                        verticalAlignment: "top",
+                        margin: 0
+                    },
+                    series: [{
+                        type: "doughnut",
+                        argumentField: "name",
+                        label: {
+                            visible: true,
+                            //format: "millions",
+                            connector: {
+                                visible: true
+                            }
+                        }
+                    }]
                 });
             }
         })
