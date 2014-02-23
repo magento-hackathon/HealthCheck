@@ -49,11 +49,11 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 $this->getContentRenderer()->addRow($row);
             }
         } else {
-            $factory = Mage::getModel('hackathon_healthcheck/factory');
-            $this->setContentType(Hackathon_HealthCheck_Block_Content_Plaintext::CONTENT_TYPE_PLAINTEXT);
-            $block = $factory->getContentRenderer($this);
-            $this->setBlock($block);
-            $block->setContent($helper->__('No Sitemap'));
+            $factory = Mage::getSingleton('hackathon_healthcheck/factory');
+            $this->setContentType(Hackathon_HealthCheck_Model_Content_Renderer_Plaintext::CONTENT_TYPE_PLAINTEXT);
+            $renderer = $factory->getContentRenderer($this);
+            $this->setContentRenderer($renderer);
+            $renderer->setPlaintextContent($helper->__('No Sitemap'));
         }
 
         return $this;

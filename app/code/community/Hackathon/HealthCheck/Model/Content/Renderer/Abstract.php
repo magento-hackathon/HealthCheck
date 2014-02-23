@@ -26,9 +26,13 @@ abstract class Hackathon_HealthCheck_Model_Content_Renderer_Abstract extends Mag
      */
     public function getContent()
     {
+        $content = $this->_getContent();
+        if (empty($content)) {
+            return $this->_encode(Mage::helper('hackathon_healthcheck')->__('No information available'));
+        }
         $result = array(
             'type'      => $this->getCheck()->getContentType(),
-            'content'   => $this->_getContent()
+            'content'   => $content
         );
 
         return $this->_encode($result);

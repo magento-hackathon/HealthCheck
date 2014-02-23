@@ -1,11 +1,4 @@
 <?php
-/**
- * @category Shopwerft
- * @package Shopwerft_XXX
- * @author Shopwerft GmbH <werft@shopwerft.com>
- * @author Benjamin Wunderlich <b.wunderlich@shopwerft.com>
- * @copyright 2013 Shopwerft GmbH (http://www.shopwerft.com)
- */
 
 class Hackathon_HealthCheck_Model_Content_Renderer_Plaintext extends Hackathon_HealthCheck_Model_Content_Renderer_Abstract
 {
@@ -19,13 +12,9 @@ class Hackathon_HealthCheck_Model_Content_Renderer_Plaintext extends Hackathon_H
      */
     public function _getContent()
     {
-        if ($this->getContent()) {
-            return $this->getContent();
+        if ($this->getPlaintextContent()) {
+            return $this->getPlaintextContent();
         }
-        /**
-         * @todo create a better solution
-         */
-        return '';
     }
 
 
