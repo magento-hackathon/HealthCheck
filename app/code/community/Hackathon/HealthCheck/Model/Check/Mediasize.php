@@ -70,8 +70,8 @@ class Hackathon_HealthCheck_Model_Check_Mediasize extends Hackathon_HealthCheck_
 
         $header = array(
             $helper->__('Size'),
-            $helper->__('Number Files'),
-            $helper->__('Number Directories')
+            $helper->__('Number Directories'),
+            $helper->__('Number Files')
         );
         $this->getContentRenderer()->setHeaderRow($header);
 

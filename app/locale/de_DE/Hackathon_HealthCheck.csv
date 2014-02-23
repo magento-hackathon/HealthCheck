@@ -26,3 +26,7 @@
 ".htaccess does not exist", ".htaccess nicht vorhanden"
 "Admin-URL", "Admin-URL"
 "Shop-Status","Shop-Status"
+"Media Dir Size", "Media Verzeichnis Größe"
+"Size", "Größe"
+"Number Files", "Anzahl Dateien"
+"Number Directories", "Anzahl Verzeichnisse"
