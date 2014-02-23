@@ -8,7 +8,6 @@ class Hackathon_HealthCheck_Model_Check_ShopStatus extends Hackathon_HealthCheck
         $status_error = Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_ERROR;
         $status_warning = Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_WARNING;
         $status_ok = Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_OK;
-
         $helper = Mage::helper('hackathon_healthcheck');
         $renderer = $this->getContentRenderer();
 
