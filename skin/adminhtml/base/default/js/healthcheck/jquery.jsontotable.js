@@ -26,8 +26,6 @@
                 table.addClass(options.className);
             }
 
-            console.log(data);
-
             $.fn.appendTr = function(rowData, isHeader) {
                 var frameTag = (isHeader) ? "thead" : "tbody";
                 var rowTag = (isHeader) ? "th" : "td";
