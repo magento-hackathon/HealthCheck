@@ -102,10 +102,10 @@
                         <path>dev/js/merge_files</path>
                         <recommendation>1</recommendation>
                     </dev_js_merge_files>
-                    <dev_css_merge_files>
-                        <path>dev/css/merge_files</path>
+                    <dev_css_merge_css_files>
+                        <path>dev/css/merge_css_files</path>
                         <recommendation>1</recommendation>
-                    </dev_css_merge_files>
+                    </dev_css_merge_css_files>
                 </values>
                 <sort_order>1</sort_order>
             </shop_configuration>
