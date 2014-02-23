@@ -14,6 +14,7 @@ app/code/community/Hackathon/HealthCheck/Model/Check/Collection.php app/code/com
 app/code/community/Hackathon/HealthCheck/Model/Check/Htaccess.php app/code/community/Hackathon/HealthCheck/Model/Check/Htaccess.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Logfilesize.php app/code/community/Hackathon/HealthCheck/Model/Check/Logfilesize.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php
+app/code/community/Hackathon/HealthCheck/Model/Check/ShopConfiguration.php app/code/community/Hackathon/HealthCheck/Model/Check/ShopConfiguration.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php
 app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Abstract.php
 app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Barchart.php app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Barchart.php
