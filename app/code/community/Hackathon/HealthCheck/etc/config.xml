@@ -51,6 +51,13 @@
                 <title>Logfile Size</title>
             </logfilesize>
 
+            <mediasize>
+                <model>hackathon_healthcheck/check_mediasize</model>
+                <type>static</type>
+                <content_type>table</content_type>
+                <title>Media Size</title>
+            </mediasize>
+
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->
