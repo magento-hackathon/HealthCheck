@@ -25,3 +25,4 @@
 ".htaccess exists", ".htaccess vorhanden"
 ".htaccess does not exist", ".htaccess nicht vorhanden"
 "Admin-URL", "Admin-URL"
+"Shop-Status","Shop-Status"
