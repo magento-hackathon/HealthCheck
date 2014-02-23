@@ -39,7 +39,11 @@ class Hackathon_HealthCheck_Model_Content_Renderer_Table extends Hackathon_Healt
     {
         $result = array();
         foreach ($this->getRows() as $row) {
-            $result[] = array_combine($this->getHeaderRow(), $row);
+            $rowData = array_combine($this->getHeaderRow(), $row['values']);
+            if (isset($row['config'])) {
+                $rowData = array_merge($rowData, $row['config']);
+            }
+            $result[] = $rowData;
         }
         return $result;
     }
@@ -48,12 +52,20 @@ class Hackathon_HealthCheck_Model_Content_Renderer_Table extends Hackathon_Healt
      * Add new row to table.
      *
      * @param $row
+     * @param $rowConfig array()
      * @return $this
      */
-    public function addRow($row)
+    public function addRow($row, $rowConfig = array())
     {
         $rows = $this->getRows();
-        $rows[] = $row;
+
+        // collect data for new row and combine with config
+        $rowData = array('values' => $row);
+        if (count($rowConfig)) {
+            $rowData['config'] = $rowConfig;
+        }
+
+        $rows[] = $rowData;
         $this->setRows($rows);
 
         return $this;

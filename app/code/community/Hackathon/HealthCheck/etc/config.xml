@@ -38,6 +38,7 @@
             </sitemap>
 
             <producttypes>
+                <active>false</active>
                 <model>hackathon_healthcheck/check_producttypes</model>
                 <type>ondemand</type>
                 <content_type>piechart</content_type>
@@ -45,6 +46,7 @@
             </producttypes>
 
             <logfilesize>
+                <active>false</active>
                 <model>hackathon_healthcheck/check_logfilesize</model>
                 <type>ondemand</type>
                 <content_type>barchart</content_type>
@@ -57,7 +59,23 @@
                 <content_type>table</content_type>
                 <title>Media Dir Size</title>
             </mediasize>
-
+            
+            <shop_configuration>
+                <model>hackathon_healthcheck/check_shopConfiguration</model>
+                <type>static</type>
+                <content_type>table</content_type>
+                <title>Shop Configuration</title>
+                <values>
+                    <flat_table_products>
+                        <path>catalog/frontend/flat_catalog_category</path>
+                        <recommendation>1</recommendation>
+                    </flat_table_products>
+                    <flat_table_categories>
+                        <path>catalog/frontend/flat_catalog_category</path>
+                        <recommendation>1</recommendation>
+                    </flat_table_categories>
+                </values>
+            </shop_configuration>
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->
