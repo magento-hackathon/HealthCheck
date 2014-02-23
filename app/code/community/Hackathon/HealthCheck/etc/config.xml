@@ -34,6 +34,7 @@
                 </versions>
                 <content_type>table</content_type>
                 <title>Shop-Status</title>
+                <sort_order>1</sort_order>
             </shop_status>
 
             <sitemap>
@@ -47,6 +48,7 @@
                 <type>static</type>
                 <content_type>table</content_type>
                 <title>Sitemap</title>
+                <sort_order>10</sort_order>
             </sitemap>
 
             <producttypes>
@@ -55,6 +57,7 @@
                 <type>ondemand</type>
                 <content_type>piechart</content_type>
                 <title>Product Types</title>
+                <sort_order>3</sort_order>
             </producttypes>
 
             <logfilesize>
@@ -63,6 +66,7 @@
                 <type>ondemand</type>
                 <content_type>barchart</content_type>
                 <title>Logfile Size</title>
+                <sort_order>25</sort_order>
             </logfilesize>
 
             <mediasize>
@@ -78,14 +82,30 @@
                 <content_type>table</content_type>
                 <title>Shop Configuration</title>
                 <values>
-                    <flat_table_products>
+                    <flat_table_product>
+                        <path>catalog/frontend/flat_catalog_product</path>
+                        <recommendation>1</recommendation>
+                    </flat_table_product>
+                    <flat_table_category>
                         <path>catalog/frontend/flat_catalog_category</path>
                         <recommendation>1</recommendation>
-                    </flat_table_products>
-                    <flat_table_categories>
-                        <path>catalog/frontend/flat_catalog_category</path>
+                    </flat_table_category>
+                    <system_smtp_disable>
+                        <path>system/smtp/disable</path>
+                        <recommendation>0</recommendation>
+                    </system_smtp_disable>
+                    <dev_log_active>
+                        <path>dev/log/active</path>
                         <recommendation>1</recommendation>
-                    </flat_table_categories>
+                    </dev_log_active>
+                    <dev_js_merge_files>
+                        <path>dev/js/merge_files</path>
+                        <recommendation>1</recommendation>
+                    </dev_js_merge_files>
+                    <dev_css_merge_files>
+                        <path>dev/css/merge_files</path>
+                        <recommendation>1</recommendation>
+                    </dev_css_merge_files>
                 </values>
             </shop_configuration>
         </healthcheck>

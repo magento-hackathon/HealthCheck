@@ -24,6 +24,7 @@ class Hackathon_HealthCheck_Model_Check_ShopConfiguration extends Hackathon_Heal
             )
         );
         foreach ($this->_getValues() as $_valueName => $_config) {
+            $rowConfig = array();
             $path = (string)$_config->path;
             $configValue =  Mage::getStoreConfig($path);
 
@@ -39,10 +40,14 @@ class Hackathon_HealthCheck_Model_Check_ShopConfiguration extends Hackathon_Heal
             );
 
             $recommendation = (string) $_config->recommendation;
-            if ($configValue == $recommendation) {
-                $rowConfig = array('_cssClasses'   => 'health-ok');
+            if ($recommendation) {
+                if ($configValue == $recommendation) {
+                    $rowConfig = array('_cssClasses'   => 'health-ok');
+                } else {
+                    $rowConfig = array('_cssClasses'   => 'health-warning');
+                }
             } else {
-                $rowConfig = array('_cssClasses'   => 'health-warning');
+                $recommendation = '---';
             }
             $renderer->addRow(
                 array($beautyfulParamName, $paramName, $configValue, $recommendation),

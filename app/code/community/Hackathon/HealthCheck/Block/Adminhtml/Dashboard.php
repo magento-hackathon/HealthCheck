@@ -6,6 +6,7 @@ class Hackathon_HealthCheck_Block_Adminhtml_Dashboard extends Mage_Adminhtml_Blo
     {
         /** @var Hackathon_HealthCheck_Model_Check_Collection $collection */
         $collection = Mage::getModel('hackathon_healthcheck/check_collection');
+        $collection->setOrder('sort_order', Varien_Data_Collection::SORT_ORDER_ASC);
 
         return $collection;
     }
