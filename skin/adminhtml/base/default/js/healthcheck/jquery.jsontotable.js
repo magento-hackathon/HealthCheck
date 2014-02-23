@@ -19,7 +19,9 @@
             var table = $("<table></table>");
 
             for(var key in data[0]) {
-                table.append('<th>' + key + '</th>');
+                if(key[0] != '_') {
+                    table.append('<th>' + key + '</th>');
+                }
             }
 
             if(options.className) {
@@ -29,10 +31,13 @@
             $.fn.appendTr = function(rowData, isHeader) {
                 var frameTag = (isHeader) ? "thead" : "tbody";
                 var rowTag = (isHeader) ? "th" : "td";
+                var cssClass = rowData['_cssClasses'];
 
-                row = $("<tr></tr>");
+                row = $('<tr class="' + cssClass + '"></tr>');
                 for(var key in rowData) {
-                    row.append("<" + rowTag + ">" + rowData[key] + "</" + rowTag + ">");
+                    if(rowData[key].substr(0,7) != 'health-') {
+                        row.append("<" + rowTag + ">" + rowData[key] + "</" + rowTag + ">");
+                    }
                 }
 
                 $(this).append($("<" + frameTag + "></" + frameTag + ">").append(row));
