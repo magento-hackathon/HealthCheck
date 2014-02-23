@@ -92,4 +92,13 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
         }
         return false;
     }
+
+    public function throwPlaintextContent($message) {
+
+        $factory = Mage::getModel('hackathon_healthcheck/factory');
+        $this->setContentType(Hackathon_HealthCheck_Model_Content_Renderer_Plaintext::CONTENT_TYPE_PLAINTEXT);
+        $renderer = $factory->getContentRenderer($this);
+        $this->setContentRenderer($renderer);
+        $renderer->setPlaintextContent(Mage::helper('hackathon_healthcheck')->__($message));
+    }
 }

@@ -52,11 +52,8 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 $this->getContentRenderer()->addRow($row, $warn);
             }
         } else {
-            $factory = Mage::getSingleton('hackathon_healthcheck/factory');
-            $this->setContentType(Hackathon_HealthCheck_Model_Content_Renderer_Plaintext::CONTENT_TYPE_PLAINTEXT);
-            $renderer = $factory->getContentRenderer($this);
-            $this->setContentRenderer($renderer);
-            $renderer->setPlaintextContent($helper->__('No Sitemap'));
+
+            $this->throwPlaintextContent('No Sitemap available or found.');
         }
 
         return $this;
