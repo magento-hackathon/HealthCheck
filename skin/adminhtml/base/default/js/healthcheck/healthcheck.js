@@ -72,7 +72,7 @@ var Hackathon_HealthCheck = {
                     series: {
                         argumentField: "name",
                         valueField: "value",
-                        name: "Size in KB",
+                        name: "Size in MB",
                         type: "bar",
                         color: '#16a085'
                     },

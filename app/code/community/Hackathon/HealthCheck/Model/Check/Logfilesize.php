@@ -2,6 +2,17 @@
 
 class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthCheck_Model_Check_Abstract
 {
+    /**
+     * @param $bytes Size
+     * @param int $decimals float
+     * @return string Size
+     *
+     * Shamelessly stolen from php.net
+     */
+    private function human_filesize($bytes, $decimals = 2) {
+        $factor = floor((strlen($bytes) - 1) / 3);
+        return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor));
+    }
 
     public function _run() {
 
@@ -18,8 +29,12 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
                 while (($file = readdir($handle)) !== false)
                     if ($file != "." && $file != ".." && strpos($file, '.log'))
                     {
-                        $filesize = filesize($path . $file) / 1024;
-                        $renderer->addValue($file, number_format($filesize, 2));
+                        $filesize = filesize($path . $file);
+                        // Byte to MB conversion, round to two
+                        /**
+                         * @TODO dynamically choose KB, MB, BG and use it correct in frontend
+                         */
+                        $renderer->addValue($file, number_format($filesize/1024/1024, 2), 2);
                     }
                 closedir($handle);
             }
