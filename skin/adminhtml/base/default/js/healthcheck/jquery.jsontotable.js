@@ -18,19 +18,19 @@
             var i, row;
             var table = $("<table></table>");
 
+            for(var key in data[0]) {
+                table.append('<th>' + key + '</th>');
+            }
 
             if(options.className) {
                 table.addClass(options.className);
             }
 
+            console.log(data);
+
             $.fn.appendTr = function(rowData, isHeader) {
                 var frameTag = (isHeader) ? "thead" : "tbody";
                 var rowTag = (isHeader) ? "th" : "td";
-
-                /*for(var key in rowData) {
-                    console.log(rowData);
-                    table.append("<th>" + rowData[key] + "</th>");
-                }*/
 
                 row = $("<tr></tr>");
                 for(var key in rowData) {

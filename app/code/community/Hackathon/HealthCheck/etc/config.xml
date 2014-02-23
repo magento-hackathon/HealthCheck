@@ -32,14 +32,14 @@
                     1.3*
                     1.7.0*
                 </versions>
-                <type>ondemand</type>
+                <type>static</type>
                 <content_type>table</content_type>
                 <title>Sitemap</title>
             </sitemap>
 
-            <producttypes>
+            <producttypes>>
                 <model>hackathon_healthcheck/check_producttypes</model>
-                <type>static</type>
+                <type>ondemand</type>
                 <content_type>piechart</content_type>
                 <title>Product Types</title>
             </producttypes>
