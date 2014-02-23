@@ -35,7 +35,8 @@
 
                 row = $('<tr class="' + cssClass + '"></tr>');
                 for(var key in rowData) {
-                    if(rowData[key].substr(0,7) != 'health-') {
+                    var data = rowData[key].toString();
+                    if(data.substr(0,7) != 'health-') {
                         row.append("<" + rowTag + ">" + rowData[key] + "</" + rowTag + ">");
                     }
                 }
