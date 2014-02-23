@@ -1,5 +1,7 @@
+LIST.md LIST.md
 README.md README.md
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Dashboard.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Dashboard.php
+app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Barchart.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Barchart.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Piechart.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Piechart.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Plaintext.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Plaintext.php
 app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Table.php app/code/community/Hackathon/HealthCheck/Block/Adminhtml/Type/Table.php
@@ -10,6 +12,7 @@ app/code/community/Hackathon/HealthCheck/Helper/Data.php app/code/community/Hack
 app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Check/Abstract.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Collection.php app/code/community/Hackathon/HealthCheck/Model/Check/Collection.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Hiddenactivations.php app/code/community/Hackathon/HealthCheck/Model/Check/Hiddenactivations.php
+app/code/community/Hackathon/HealthCheck/Model/Check/Logfilesize.php app/code/community/Hackathon/HealthCheck/Model/Check/Logfilesize.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php app/code/community/Hackathon/HealthCheck/Model/Check/Producttypes.php
 app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php app/code/community/Hackathon/HealthCheck/Model/Check/Sitemap.php
 app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Abstract.php app/code/community/Hackathon/HealthCheck/Model/Content/Renderer/Abstract.php

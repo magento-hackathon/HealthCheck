@@ -53,6 +53,13 @@
                 <title>Product Types</title>
             </producttypes>
 
+            <logfilesize>
+                <model>hackathon_healthcheck/check_logfilesize</model>
+                <type>ondemand</type>
+                <content_type>barchart</content_type>
+                <title>Logfile Size</title>
+            </logfilesize>
+
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->

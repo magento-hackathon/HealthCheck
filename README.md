@@ -64,10 +64,10 @@ For each plugin the supported Magento versions can be configured
                 <type>static</type> <!-- execution type (static|ondemand) -->
                 <content-type>plaintext</content-type> <!-- content type of the plugin result -->
                 <versions> <!-- supported magento versions (optional) -->
-                    <version>1.5</version> <!-- all 1.5 versions -->
-                    <version>1.6</version> <!-- all 1.6 versions -->
-                    <version>1.7.0.2</version> <!-- only exactly 1.7.0.2 -->
-                    <version>1.8.0</version> <!-- all 1.8.0.* versions -->
+                    1.5.* <!-- all 1.5 versions -->
+                    1.6.* <!-- all 1.6 versions -->
+                    1.7.0.2 <!-- only exactly 1.7.0.2 -->
+                    1.8.0.* <!-- all 1.8.0.* versions -->
                 </versions>
             </sitemap>
         </healthcheck>
