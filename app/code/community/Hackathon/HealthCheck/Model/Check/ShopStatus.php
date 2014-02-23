@@ -34,7 +34,7 @@ class Hackathon_HealthCheck_Model_Check_ShopStatus extends Hackathon_HealthCheck
         /**
          * Magento-URL Information
          */
-        $row[$helper->__('Admin-URL')] = Mage::getUrl().Mage::getConfig()->getNode('global/admin/routers/adminhtml/args/frontName');
+        $row[$helper->__('Admin-URL')] = Mage::helper('adminhtml')->getUrl('adminhtml');
 
         foreach (Mage::app()->getStores() as $store) {
             $row[$store->getName()] = Mage::app()->getStore($store->getId())->getUrl();

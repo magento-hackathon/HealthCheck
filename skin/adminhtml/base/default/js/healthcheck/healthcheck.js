@@ -107,7 +107,6 @@ var Hackathon_HealthCheck = {
                         argumentField: "name",
                         label: {
                             visible: true,
-                            //format: "millions",
                             connector: {
                                 visible: true
                             }
