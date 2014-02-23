@@ -54,8 +54,8 @@
             <producttypes>
                 <active>true</active>
                 <model>hackathon_healthcheck/check_producttypes</model>
-                <type>ondemand</type>
-                <content_type>donut</content_type>
+                <type>static</type>
+                <content_type>donutchart</content_type>
                 <title>Product Types</title>
                 <sort_order>4</sort_order>
             </producttypes>
