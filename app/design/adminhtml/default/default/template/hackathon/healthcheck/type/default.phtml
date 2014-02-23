@@ -4,7 +4,7 @@ $checkId = $this->getCheck()->getCheckId();
 
 ?>
 <div class="<?php echo $this->getCheck()->getContentType() ?> healthcheck-box">
-    <h2><?php echo $this->getCheck()->getTitle(); ?></h2>
+    <h2><?php echo $this->__($this->getCheck()->getTitle()); ?></h2>
 
     <div id="<?php echo $checkId; ?>"></div>
 
