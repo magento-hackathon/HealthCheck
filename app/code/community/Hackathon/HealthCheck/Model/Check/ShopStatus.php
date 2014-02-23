@@ -1,6 +1,6 @@
 <?php
 
-class Hackathon_HealthCheck_Model_Check_Htaccess extends Hackathon_HealthCheck_Model_Check_Abstract
+class Hackathon_HealthCheck_Model_Check_ShopStatus extends Hackathon_HealthCheck_Model_Check_Abstract
 {
     public function _run() {
 
@@ -26,9 +26,9 @@ class Hackathon_HealthCheck_Model_Check_Htaccess extends Hackathon_HealthCheck_M
          * HTACCESS-Check
          */
         if (file_exists(Mage::getBaseDir() . "/.htaccess")) {
-            $row[$helper->__('.htaccess')] = 'htaccess exists';
+            $row[$helper->__('.htaccess')] = $helper->__('.htaccess exists');
         } else {
-            $row[$helper->__('.htaccess')] = 'htaccess does not exist';
+            $row[$helper->__('.htaccess')] = $helper->__('.htaccess does not exist');
         }
 
         /**
@@ -39,9 +39,6 @@ class Hackathon_HealthCheck_Model_Check_Htaccess extends Hackathon_HealthCheck_M
         foreach (Mage::app()->getStores() as $store) {
             $row[$store->getName()] = Mage::app()->getStore($store->getId())->getUrl();
         }
-
-
-
 
         /**
          * Rendering
