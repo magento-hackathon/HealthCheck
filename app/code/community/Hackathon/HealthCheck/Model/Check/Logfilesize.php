@@ -21,7 +21,7 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
                         /**
                          * @TODO dynamically choose KB, MB, BG and use it correct in frontend
                          */
-                        $renderer->addValue($file, number_format($filesize/1024/1024, 2), 2);
+                        $renderer->addValue($file, number_format($filesize/1024/1024, 2));
                     }
                 closedir($handle);
             }
