@@ -1,4 +1,6 @@
 #!/bin/zsh
+
+# Very simple and stupid modman generator...
 rm modman
 for f in  $(find * -type f -not -path '*\/.*')
     do
