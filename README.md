@@ -77,11 +77,54 @@ For each plugin the supported Magento versions can be configured
 
 ## Backend Usage
 
-???
+We provide a dashboard in System > Healthcheck > Dashboard wich at the moment list every check and executes static-checks right away.
 
 
 ## Howto: Developing an own Test Plugin
 
 To create an own check plugin you simply have to extend the abstract class *Hackathon_HealthCheck_Model_Check_Abstract* and implement the only abstract method *run()* with your check logic. Afterwards register your plugin at the HealthCheck by adding the described XML-Code to the config.xml of your module. Done!
 
+Be sure to pass the data you create in the way the respective Display-Type-Renderer needs it. More information on this will follow here:
+
+```php
+/**
+* Plaintext
+* Just put in a String which contains your message/data
+**/
+
+public function throwPlaintextContent($message) {
+
+        $factory = Mage::getModel('hackathon_healthcheck/factory');
+        $this->setContentType(Hackathon_HealthCheck_Model_Content_Renderer_Plaintext::CONTENT_TYPE_PLAINTEXT);
+        $this->setContentRenderer($factory->getContentRenderer($this));
+        $this->getContentRenderer()->setPlaintextContent(Mage::helper('hackathon_healthcheck')->__($message));
+    }
+    
+/**
+* Table
+*
+* Create an array with your table headers first:
+**/
+
+ $header = array(
+     $helper->__('ID'),
+     $helper->__('Filename'),
+     $helper->__('Path'),
+     $helper->__('Status')
+ );
+ $this->getContentRenderer()->setHeaderRow($header);
+
+ 
+/**
+* Then fill up another array with your data and append it to the renderer
+* You even can add css-classes via our helper to color your rows.
+**/
+
+ $status = $helper->__('Sitemap file not found');
+ $warn = array('_cssClasses' =>  $helper->getConst('WARN_TYPE_ERROR'));
+ // The other variables here just contain the row-information
+ $row = array ($id, $filename, $totalPath, $status);
+ $this->getContentRenderer()->addRow($row, $warn);
+
+```
 Now your check plugin should be visible in Magento backend and executed directly (static mode) or on click (ondemand mode). The results will be saved directyl by the HealthCheck framework.
