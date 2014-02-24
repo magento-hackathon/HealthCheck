@@ -53,7 +53,7 @@
                 table.appendTr(obj[i]);
             }
 
-            $(options.id).append(table);
+            $(options.id).html(table);
         }
 
         return this;
