@@ -20,9 +20,6 @@ $checkId = $this->getCheck()->getCheckId();
         <script>
             jQuery(document).ready(function() {
                 Hackathon_HealthCheck.showData('<?php echo $checkId; ?>');
-                jQuery('.execute-button').click(function() {
-                    jQuery(this).fadeOut();
-                })
             });
         </script>
 
