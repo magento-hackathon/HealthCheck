@@ -28,7 +28,7 @@
 
             <shop_status>
                 <model>hackathon_healthcheck/check_shopStatus</model>
-                <type>ondemand</type>
+                <type>static</type>
                 <versions>
                     *
                 </versions>
