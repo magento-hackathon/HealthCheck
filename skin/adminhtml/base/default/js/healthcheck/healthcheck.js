@@ -64,7 +64,6 @@ var Hackathon_HealthCheck = {
                 var barChartSource = [];
                 jQuery.each(data['content'], function(key, value) {
                     barChartSource.push({ name: key, value: parseFloat(value)})
-                    console.log(barChartSource);
                 });
 
                 jQuery('#' + checkIdentifier).dxChart({
