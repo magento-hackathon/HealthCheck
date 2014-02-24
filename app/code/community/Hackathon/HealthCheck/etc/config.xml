@@ -47,7 +47,7 @@
                 </versions>
                 <type>static</type>
                 <content_type>table</content_type>
-                <title>Sitemap</title>
+                <title>Sitemap/robots.txt</title>
                 <sort_order>3</sort_order>
             </sitemap>
 

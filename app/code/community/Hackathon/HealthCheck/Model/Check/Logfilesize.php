@@ -7,8 +7,6 @@ class Hackathon_HealthCheck_Model_Check_Logfilesize extends Hackathon_HealthChec
 
         /** @var Hackathon_Healthcheck_Model_Content_Renderer_Abstract $renderer */
         $renderer = $this->getContentRenderer();
-        $helper = Mage::helper('hackathon_healthcheck');
-
         $path = Mage::getBaseDir() . '/var/log/';
 
         if(is_dir($path) && file_exists($path))

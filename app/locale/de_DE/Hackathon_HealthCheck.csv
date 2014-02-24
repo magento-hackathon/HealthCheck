@@ -1,4 +1,4 @@
-"Sitemap","Sitemap"
+"Sitemap/robots.txt","Sitemap/robots.txt"
 "OK, but not change within last 24h","OK, aber nicht innerhalb der letzten 24 Std. geändert"
 "OK","OK"
 "Sitemap file not found","Sitemap-Datei nicht gefunden"
@@ -31,3 +31,5 @@
 "Number Files", "Anzahl Dateien"
 "Number Directories", "Anzahl Verzeichnisse"
 "No log directory", "Kein Log-Verzeichnis vorhanden"
+"Last modified", "Zuletzt geändert"
+"Not available", "Nicht verfügbar"
