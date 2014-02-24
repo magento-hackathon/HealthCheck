@@ -9,10 +9,11 @@
 class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Model_Check_Abstract
 {
 
-    private function getFileInfo($pathToFile, $mtime, $helper) {
+    private function getFileInfo($pathToFile, $helper) {
 
-        if (file_exists($pathToFile)){
+        if (file_exists($pathToFile)) {
 
+            $mtime = filemtime($pathToFile);
             $date = Mage::getModel('core/date')->timestamp(time());
             $date = date('Y-m-d H:i:s', $date);
             $time24 = strtotime($date) - 86400;
@@ -57,7 +58,7 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 $sitemapTime = strtotime($sitemap->getSitemapTime());
                 $totalPath = Mage::getBaseDir() . $path . $filename;
 
-                $fileInfo = $this->getFileInfo($totalPath, $sitemapTime, $helper);
+                $fileInfo = $this->getFileInfo($totalPath, $helper);
                 $row = array ($filename, $totalPath, $fileInfo[0], $fileInfo[2]);
 
                 $renderer->addRow($row, $fileInfo[1]);
@@ -75,9 +76,9 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
 
         $file = 'robots.txt';
         $path = Mage::getBaseDir() . '/' . $file;
-        $mtime = filemtime($path);
 
-        $fileInfo = $this->getFileInfo($path, $mtime, $helper);
+
+        $fileInfo = $this->getFileInfo($path, $helper);
 
         $renderer->addRow(array($file, $path, $fileInfo[0], $fileInfo[2]), $fileInfo[1]);
 
