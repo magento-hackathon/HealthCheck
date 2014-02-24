@@ -42,9 +42,9 @@ class Hackathon_HealthCheck_Model_Check_ShopConfiguration extends Hackathon_Heal
             $recommendation = (string) $_config->recommendation;
             if ($recommendation) {
                 if ($configValue == $recommendation) {
-                    $rowConfig = array('_cssClasses'   => Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_OK);
+                    $rowConfig = array('_cssClasses'   => Hackathon_HealthCheck_Helper_Data::WARN_TYPE_OK);
                 } else {
-                    $rowConfig = array('_cssClasses'   => Hackathon_HealthCheck_Model_Check_Abstract::WARN_TYPE_WARNING);
+                    $rowConfig = array('_cssClasses'   => Hackathon_HealthCheck_Helper_Data::WARN_TYPE_WARNING);
                 }
             } else {
                 $recommendation = '---';

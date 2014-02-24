@@ -7,12 +7,6 @@
 abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Model_Abstract
 {
 
-    const WARN_TYPE_CSSCLASS = '_cssClasses';
-    const WARN_TYPE_OK = 'health-ok';
-    const WARN_TYPE_WARNING = 'health-warning';
-    const WARN_TYPE_ERROR = 'health-error';
-
-
     public function initCheck() {
 
         if ($this->isAvailable()) {
@@ -83,7 +77,6 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
         // iterate on versions to find a fitting one
         foreach ($versions as $_version) {
             $quotedVersion = preg_quote($_version);
-
             // build regular expression with wildcard to check magento version
             $pregExpr = '#\A' . str_replace('\*', '.*', $quotedVersion) . '\z#ims';
 
@@ -98,8 +91,7 @@ abstract class Hackathon_HealthCheck_Model_Check_Abstract extends Mage_Core_Mode
 
         $factory = Mage::getModel('hackathon_healthcheck/factory');
         $this->setContentType(Hackathon_HealthCheck_Model_Content_Renderer_Plaintext::CONTENT_TYPE_PLAINTEXT);
-        $renderer = $factory->getContentRenderer($this);
-        $this->setContentRenderer($renderer);
-        $renderer->setPlaintextContent(Mage::helper('hackathon_healthcheck')->__($message));
+        $this->setContentRenderer($factory->getContentRenderer($this));
+        $this->getContentRenderer()->setPlaintextContent(Mage::helper('hackathon_healthcheck')->__($message));
     }
 }

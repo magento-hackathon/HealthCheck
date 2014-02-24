@@ -9,6 +9,11 @@ class Hackathon_HealthCheck_Helper_Data extends Mage_Core_Helper_Abstract {
     const TYPE_STATIC = 'static';
     const TYPE_ONDEMAND = 'ondemand';
 
+    const WARN_CSSCLASS = '_cssClasses';
+    const WARN_TYPE_OK = 'health-ok';
+    const WARN_TYPE_WARNING = 'health-warning';
+    const WARN_TYPE_ERROR = 'health-error';
+
     /**
      * Extract versions from csv versions string with wildcards
      *
@@ -20,4 +25,9 @@ class Hackathon_HealthCheck_Helper_Data extends Mage_Core_Helper_Abstract {
         preg_match_all(self::VERSIONS_REGEXP, $versions, $matches);
         return $matches[0];
     }
+
+    public function getConst($typestring) {
+        return constant('self::'.$typestring);
+    }
+
 }
