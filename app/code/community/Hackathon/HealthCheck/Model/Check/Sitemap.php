@@ -28,7 +28,7 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
             }
             $lastModified = date('d.m.Y H:i:s ', $mtime);
         } else {
-            $status = $helper->__('Sitemap file not found');
+            $status = $helper->__('File not found');
             $warn = array('_cssClasses' =>  $helper->getConst('WARN_TYPE_ERROR'));
             $lastModified = $helper->__('Not available');
         }
@@ -55,7 +55,6 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
             foreach ($sitemaps as $sitemap) {
                 $filename = $sitemap->getSitemapFilename();
                 $path = $sitemap->getSitemapPath();
-                $sitemapTime = strtotime($sitemap->getSitemapTime());
                 $totalPath = Mage::getBaseDir() . $path . $filename;
 
                 $fileInfo = $this->getFileInfo($totalPath, $helper);
@@ -64,8 +63,11 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
                 $renderer->addRow($row, $fileInfo[1]);
             }
         } else {
-
-            $this->throwPlaintextContent('No Sitemap available or found.');
+            /**
+             * This will fall apart, if the check is redesigned to support
+             * different files.
+             */
+            $this->throwPlaintextContent('File not available or found.');
         }
 
         /**
