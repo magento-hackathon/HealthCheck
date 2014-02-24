@@ -11,7 +11,6 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
 
     public function _run() {
    	    $sitemaps = Mage::getModel('sitemap/sitemap')->getCollection();
-        Mage::log($sitemaps);
         $helper = Mage::helper('hackathon_healthcheck');
 
         if (count($sitemaps)) {
