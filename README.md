@@ -44,12 +44,12 @@ The plugin must return the check result as one of the following content-types co
 For each plugin the supported Magento versions can be configured
 
 ```xml
-<versions>
-  <version>1.5</version>
-  <version>1.6</version>
-  <version>1.7.0.2</version>
-  <version>1.8.0</version>
-</versions>
+ <versions> <!-- supported magento versions (optional) -->
+    1.5.* <!-- all 1.5 versions -->
+    1.6.* <!-- all 1.6 versions -->
+    1.7.0.2 <!-- only exactly 1.7.0.2 -->
+    1.8.0.* <!-- all 1.8.0.* versions -->
+ </versions>
 ```
 
 ### Example (sitemap check)
