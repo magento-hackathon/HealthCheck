@@ -60,6 +60,15 @@
                 <sort_order>4</sort_order>
             </producttypes>
 
+            <productcomposition>
+                <active>true</active>
+                <model>hackathon_healthcheck/check_productComposition</model>
+                <type>static</type>
+                <content_type>table</content_type>
+                <title>Product Composition</title>
+                <sort_order>1</sort_order>
+            </productcomposition>
+
             <logfilesize>
                 <active>true</active>
                 <model>hackathon_healthcheck/check_logfilesize</model>

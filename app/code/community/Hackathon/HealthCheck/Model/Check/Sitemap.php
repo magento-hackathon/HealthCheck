@@ -62,12 +62,6 @@ class Hackathon_HealthCheck_Model_Check_Sitemap extends Hackathon_HealthCheck_Mo
 
                 $renderer->addRow($row, $fileInfo[1]);
             }
-        } else {
-            /**
-             * This will fall apart, if the check is redesigned to support
-             * different files.
-             */
-            $this->throwPlaintextContent('File not available or found.');
         }
 
         /**
