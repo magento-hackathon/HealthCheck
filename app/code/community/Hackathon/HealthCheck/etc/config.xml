@@ -115,6 +115,17 @@
                         <path>dev/css/merge_css_files</path>
                         <recommendation>1</recommendation>
                     </dev_css_merge_css_files>
+                    <admin_security_use_form_key>
+                        <path>admin/security/use_form_key</path>
+                        <recommendation>1</recommendation>
+                    </admin_security_use_form_key>
+                    <admin_url_use_custom>
+                        <path>admin/url/use_custom</path>
+                        <recommendation>1</recommendation>
+                    </admin_url_use_custom>
+                    <admin_url_custom>
+                        <path>admin/url/custom</path>
+                    </admin_url_custom>
                 </values>
                 <sort_order>1</sort_order>
             </shop_configuration>
