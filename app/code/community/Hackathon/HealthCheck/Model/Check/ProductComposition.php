@@ -34,15 +34,17 @@ class Hackathon_HealthCheck_Model_Check_ProductComposition extends Hackathon_Hea
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToFilter('type_id', array('eq' => 'bundle'));
 
-        foreach ($collection as $bundle) {
-            $simples[$bundle->getSku()] = 0;
-            foreach ($bundle->getTypeInstance()->getChildrenIds($bundle->getId()) as $simpleGroup) {
-                $simples[$bundle->getSku()] += count($simpleGroup);
+        if (count($collection) != 0) {
+            foreach ($collection as $bundle) {
+                $simples[$bundle->getSku()] = 0;
+                foreach ($bundle->getTypeInstance()->getChildrenIds($bundle->getId()) as $simpleGroup) {
+                    $simples[$bundle->getSku()] += count($simpleGroup);
+                }
             }
+            return $this->getDataRow($simples);
+        } else {
+            return false;
         }
-
-        return $this->getDataRow($simples);
-
     }
 
     /**
@@ -57,12 +59,15 @@ class Hackathon_HealthCheck_Model_Check_ProductComposition extends Hackathon_Hea
         $collection = Mage::getModel('catalog/product')->getCollection()
             ->addAttributeToFilter('type_id', array('eq' => 'configurable'));
 
-        foreach ($collection as $configurable) {
-            $simples[$configurable->getSku()] = count($configurable->getTypeInstance()->getUsedProductIds());
+        if (count($collection) != 0) {
+            foreach ($collection as $configurable) {
+                $simples[$configurable->getSku()] = count($configurable->getTypeInstance()->getUsedProductIds());
+            }
+            return $this->getDataRow($simples);
+
+        } else {
+            return false;
         }
-
-        return $this->getDataRow($simples);
-
     }
 
     public function _run() {
@@ -80,10 +85,15 @@ class Hackathon_HealthCheck_Model_Check_ProductComposition extends Hackathon_Hea
         );
 
         $renderer->setHeaderRow($header);
-        $renderer->addRow($configurables);
-        $renderer->addRow(array('Bundles', 'Bundles', 'Bundles'));
-        $renderer->addRow($bundles);
 
+        if ($configurables) {
+            $renderer->addRow($configurables);
+        } else if ($bundles) {
+            $renderer->addRow(array('Bundles', 'Bundles', 'Bundles'));
+            $renderer->addRow($bundles);
+        } else {
+            $this->throwPlaintextContent('No data available');
+        }
 
     }
 

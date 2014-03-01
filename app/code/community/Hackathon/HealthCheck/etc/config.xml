@@ -63,7 +63,7 @@
             <productcomposition>
                 <active>true</active>
                 <model>hackathon_healthcheck/check_productComposition</model>
-                <type>static</type>
+                <type>ondemand</type>
                 <content_type>table</content_type>
                 <title>Product Composition</title>
                 <sort_order>1</sort_order>
