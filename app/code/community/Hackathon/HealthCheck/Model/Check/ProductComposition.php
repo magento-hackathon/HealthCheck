@@ -16,7 +16,7 @@ class Hackathon_HealthCheck_Model_Check_ProductComposition extends Hackathon_Hea
      */
     private function getDataRow($simples) {
 
-        $avgSimplePerConfig = array_sum($simples) / count(array_keys($simples));
+        $avgSimplePerConfig = number_format(array_sum($simples) / count(array_keys($simples)), 2);
         $biggestConfigurableVal = max($simples);
         $biggestConfigurableSku = array_keys($simples, max($simples));
 
