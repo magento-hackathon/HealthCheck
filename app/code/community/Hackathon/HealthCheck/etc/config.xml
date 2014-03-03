@@ -34,7 +34,7 @@
                 </versions>
                 <content_type>table</content_type>
                 <title>Shop-Status</title>
-                <sort_order>2</sort_order>
+                <sort_order>10</sort_order>
             </shop_status>
 
             <sitemap>
@@ -48,7 +48,7 @@
                 <type>static</type>
                 <content_type>table</content_type>
                 <title>Sitemap/robots.txt</title>
-                <sort_order>3</sort_order>
+                <sort_order>60</sort_order>
             </sitemap>
 
             <producttypes>
@@ -57,8 +57,17 @@
                 <type>ondemand</type>
                 <content_type>donutchart</content_type>
                 <title>Product Types</title>
-                <sort_order>4</sort_order>
+                <sort_order>40</sort_order>
             </producttypes>
+
+            <productcomposition>
+                <active>true</active>
+                <model>hackathon_healthcheck/check_productComposition</model>
+                <type>ondemand</type>
+                <content_type>table</content_type>
+                <title>Product Composition</title>
+                <sort_order>50</sort_order>
+            </productcomposition>
 
             <logfilesize>
                 <active>true</active>
@@ -66,7 +75,7 @@
                 <type>ondemand</type>
                 <content_type>barchart</content_type>
                 <title>Logfile Size</title>
-                <sort_order>25</sort_order>
+                <sort_order>60</sort_order>
             </logfilesize>
 
             <mediasize>
@@ -75,13 +84,6 @@
                 <content_type>table</content_type>
                 <title>Media Dir Size</title>
             </mediasize>
-
-            <moduleversion>
-                <model>hackathon_healthcheck/check_moduleVersion</model>
-                <type>static</type>
-                <content_type>table</content_type>
-                <title>Module Versions</title>
-            </moduleversion>
 
             <shop_configuration>
                 <model>hackathon_healthcheck/check_shopConfiguration</model>
@@ -113,9 +115,29 @@
                         <path>dev/css/merge_css_files</path>
                         <recommendation>1</recommendation>
                     </dev_css_merge_css_files>
+                    <admin_security_use_form_key>
+                        <path>admin/security/use_form_key</path>
+                        <recommendation>1</recommendation>
+                    </admin_security_use_form_key>
+                    <admin_url_use_custom>
+                        <path>admin/url/use_custom</path>
+                        <recommendation>1</recommendation>
+                    </admin_url_use_custom>
+                    <admin_url_custom>
+                        <path>admin/url/custom</path>
+                    </admin_url_custom>
                 </values>
-                <sort_order>1</sort_order>
+                <sort_order>20</sort_order>
             </shop_configuration>
+
+            <moduleversion>
+                <model>hackathon_healthcheck/check_moduleVersion</model>
+                <type>ondemand</type>
+                <content_type>table</content_type>
+                <title>Module Versions</title>
+                <sort_order>30</sort_order>
+            </moduleversion>
+
         </healthcheck>
 
         <!-- PLUGIN CONFIG END -->
