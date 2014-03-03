@@ -60,15 +60,6 @@
                 <sort_order>4</sort_order>
             </producttypes>
 
-            <productcomposition>
-                <active>true</active>
-                <model>hackathon_healthcheck/check_productComposition</model>
-                <type>ondemand</type>
-                <content_type>table</content_type>
-                <title>Product Composition</title>
-                <sort_order>1</sort_order>
-            </productcomposition>
-
             <logfilesize>
                 <active>true</active>
                 <model>hackathon_healthcheck/check_logfilesize</model>
@@ -84,7 +75,14 @@
                 <content_type>table</content_type>
                 <title>Media Dir Size</title>
             </mediasize>
-            
+
+            <moduleversion>
+                <model>hackathon_healthcheck/check_moduleVersion</model>
+                <type>static</type>
+                <content_type>table</content_type>
+                <title>Module Versions</title>
+            </moduleversion>
+
             <shop_configuration>
                 <model>hackathon_healthcheck/check_shopConfiguration</model>
                 <type>static</type>
@@ -115,17 +113,6 @@
                         <path>dev/css/merge_css_files</path>
                         <recommendation>1</recommendation>
                     </dev_css_merge_css_files>
-                    <admin_security_use_form_key>
-                        <path>admin/security/use_form_key</path>
-                        <recommendation>1</recommendation>
-                    </admin_security_use_form_key>
-                    <admin_url_use_custom>
-                        <path>admin/url/use_custom</path>
-                        <recommendation>1</recommendation>
-                    </admin_url_use_custom>
-                    <admin_url_custom>
-                        <path>admin/url/custom</path>
-                    </admin_url_custom>
                 </values>
                 <sort_order>1</sort_order>
             </shop_configuration>
